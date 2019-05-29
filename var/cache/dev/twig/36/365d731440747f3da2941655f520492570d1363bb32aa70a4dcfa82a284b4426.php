@@ -112,10 +112,12 @@ class __TwigTemplate_1fb882c524f29595eee5146492cfc4331d84f7f34c099cf34db1c8d46e5
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 14, $this->source); })()), "datenaissance", [], "any", false, false, false, 14), 'row');
         echo "
         <button class=\"btn btn-primary\">Valider</button>
+        <a href=\"/home\" class=\"btn btn-primary\">Annuler</a>
     ";
-        // line 16
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 16, $this->source); })()), 'form_end');
+        // line 17
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 17, $this->source); })()), 'form_end');
         echo "
+
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -137,7 +139,7 @@ class __TwigTemplate_1fb882c524f29595eee5146492cfc4331d84f7f34c099cf34db1c8d46e5
 
     public function getDebugInfo()
     {
-        return array (  117 => 16,  112 => 14,  108 => 13,  104 => 12,  100 => 11,  96 => 10,  92 => 9,  88 => 8,  84 => 6,  75 => 5,  57 => 3,  35 => 1,);
+        return array (  118 => 17,  112 => 14,  108 => 13,  104 => 12,  100 => 11,  96 => 10,  92 => 9,  88 => 8,  84 => 6,  75 => 5,  57 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -157,7 +159,9 @@ class __TwigTemplate_1fb882c524f29595eee5146492cfc4331d84f7f34c099cf34db1c8d46e5
         {{ form_row(registrationForm.avatar) }}
         {{ form_row(registrationForm.datenaissance) }}
         <button class=\"btn btn-primary\">Valider</button>
+        <a href=\"/home\" class=\"btn btn-primary\">Annuler</a>
     {{ form_end(registrationForm) }}
+
 {% endblock %}
 ", "home/upuser.html.twig", "C:\\laragon\\www\\auth\\templates\\home\\upuser.html.twig");
     }

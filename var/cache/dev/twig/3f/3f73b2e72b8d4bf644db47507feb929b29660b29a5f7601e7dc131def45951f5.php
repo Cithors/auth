@@ -51,6 +51,7 @@ class __TwigTemplate_6151cab574e50140cd81778352cbd3bee2dd54a0351d3775926c5b02c8e
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) {
             // line 10
             echo "        <div align=\"center\">
+            <br>
             <p>It works !</p>
             <a href=\"/logout\" class=\"btn btn-primary\">Log Out</a>
             <br><br>
@@ -71,58 +72,58 @@ class __TwigTemplate_6151cab574e50140cd81778352cbd3bee2dd54a0351d3775926c5b02c8e
             </tr>
 
         ";
-            // line 30
+            // line 31
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable((isset($context["tab"]) || array_key_exists("tab", $context) ? $context["tab"] : (function () { throw new RuntimeError('Variable "tab" does not exist.', 30, $this->source); })()));
+            $context['_seq'] = twig_ensure_traversable((isset($context["tab"]) || array_key_exists("tab", $context) ? $context["tab"] : (function () { throw new RuntimeError('Variable "tab" does not exist.', 31, $this->source); })()));
             foreach ($context['_seq'] as $context["_key"] => $context["user"]) {
-                // line 31
+                // line 32
                 echo "            <tr align=\"center\">
                 <td>";
-                // line 32
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 32), "html", null, true);
-                echo "</td>
-                <td>";
                 // line 33
-                echo twig_escape_filter($this->env, twig_upper_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "nom", [], "any", false, false, false, 33)), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 33), "html", null, true);
                 echo "</td>
                 <td>";
                 // line 34
-                echo twig_escape_filter($this->env, twig_capitalize_string_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "prenom", [], "any", false, false, false, 34)), "html", null, true);
+                echo twig_escape_filter($this->env, twig_upper_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "nom", [], "any", false, false, false, 34)), "html", null, true);
                 echo "</td>
                 <td>";
                 // line 35
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "email", [], "any", false, false, false, 35), "html", null, true);
+                echo twig_escape_filter($this->env, twig_capitalize_string_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "prenom", [], "any", false, false, false, 35)), "html", null, true);
+                echo "</td>
+                <td>";
+                // line 36
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "email", [], "any", false, false, false, 36), "html", null, true);
                 echo "</td>
                 <td>
                     <img src=\"";
-                // line 37
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "avatar", [], "any", false, false, false, 37), "html", null, true);
+                // line 38
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "avatar", [], "any", false, false, false, 38), "html", null, true);
                 echo "\" alt=\"avatar-";
-                echo twig_escape_filter($this->env, twig_upper_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "nom", [], "any", false, false, false, 37)), "html", null, true);
+                echo twig_escape_filter($this->env, twig_upper_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "nom", [], "any", false, false, false, 38)), "html", null, true);
                 echo "-";
-                echo twig_escape_filter($this->env, twig_capitalize_string_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "prenom", [], "any", false, false, false, 37)), "html", null, true);
+                echo twig_escape_filter($this->env, twig_capitalize_string_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "prenom", [], "any", false, false, false, 38)), "html", null, true);
                 echo "\" width=\"40\">
                 </td>
                 <td>";
-                // line 39
-                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "datenaissance", [], "any", false, false, false, 39), "d/m/Y"), "html", null, true);
-                echo "</td>
-                <td>";
                 // line 40
-                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "datecreation", [], "any", false, false, false, 40), "d/m/Y"), "html", null, true);
+                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "datenaissance", [], "any", false, false, false, 40), "d/m/Y"), "html", null, true);
                 echo "</td>
                 <td>";
                 // line 41
-                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "datemodif", [], "any", false, false, false, 41), "d/m/Y"), "html", null, true);
+                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "datecreation", [], "any", false, false, false, 41), "d/m/Y"), "html", null, true);
+                echo "</td>
+                <td>";
+                // line 42
+                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "datemodif", [], "any", false, false, false, 42), "d/m/Y"), "html", null, true);
                 echo "</td>
                 <td>
                     <a href=\"/deluser?id=";
-                // line 43
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 43), "html", null, true);
-                echo "\" class=\"btn btn-primary\">Supprimer</a>
-                    <a href=\"/updateuser?id=";
                 // line 44
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 44), "html", null, true);
+                echo "\" class=\"btn btn-primary\">Supprimer</a>
+                    <a href=\"/updateuser?id=";
+                // line 45
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 45), "html", null, true);
                 echo "\" class=\"btn btn-primary\">Modifier</a>
                 </td>
             </tr>
@@ -131,11 +132,11 @@ class __TwigTemplate_6151cab574e50140cd81778352cbd3bee2dd54a0351d3775926c5b02c8e
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['user'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 48
+            // line 49
             echo "        </table>
     ";
         } else {
-            // line 50
+            // line 51
             echo "        <div align=\"center\">
             <p>Il faut se connecter afin d'acceder à cet espace !</p>
             <a href=\"/login\" class=\"btn btn-primary\">Se connecter</a>
@@ -144,7 +145,7 @@ class __TwigTemplate_6151cab574e50140cd81778352cbd3bee2dd54a0351d3775926c5b02c8e
 
     ";
         }
-        // line 57
+        // line 58
         echo "    </body>
 </html>";
         
@@ -167,7 +168,7 @@ class __TwigTemplate_6151cab574e50140cd81778352cbd3bee2dd54a0351d3775926c5b02c8e
 
     public function getDebugInfo()
     {
-        return array (  148 => 57,  139 => 50,  135 => 48,  125 => 44,  121 => 43,  116 => 41,  112 => 40,  108 => 39,  99 => 37,  94 => 35,  90 => 34,  86 => 33,  82 => 32,  79 => 31,  75 => 30,  53 => 10,  51 => 9,  41 => 1,);
+        return array (  149 => 58,  140 => 51,  136 => 49,  126 => 45,  122 => 44,  117 => 42,  113 => 41,  109 => 40,  100 => 38,  95 => 36,  91 => 35,  87 => 34,  83 => 33,  80 => 32,  76 => 31,  53 => 10,  51 => 9,  41 => 1,);
     }
 
     public function getSourceContext()
@@ -182,6 +183,7 @@ class __TwigTemplate_6151cab574e50140cd81778352cbd3bee2dd54a0351d3775926c5b02c8e
     <body>
     {% if is_granted('IS_AUTHENTICATED_FULLY') %}
         <div align=\"center\">
+            <br>
             <p>It works !</p>
             <a href=\"/logout\" class=\"btn btn-primary\">Log Out</a>
             <br><br>

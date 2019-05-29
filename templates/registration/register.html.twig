@@ -3,9 +3,12 @@
 {% block title %}Register{% endblock %}
 
 {% block body %}
-    <h1>S'incrire</h1>
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+        <script>window.location.href = '/home'</script>
+    {% else %}
+        <h1>S'incrire</h1>
 
-    {{ form_start(registrationForm) }}
+        {{ form_start(registrationForm) }}
         {{ form_row(registrationForm.email) }}
         {{ form_row(registrationForm.password.first) }}
         {{ form_row(registrationForm.password.second) }}
@@ -14,5 +17,6 @@
         {{ form_row(registrationForm.datenaissance) }}
         {{ form_row(registrationForm.avatar) }}
         <button class="btn btn-primary">Valider</button>
-    {{ form_end(registrationForm) }}
+        {{ form_end(registrationForm) }}
+    {% endif %}
 {% endblock %}

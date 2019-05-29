@@ -12,7 +12,7 @@
                     1 => 'Ton mot de passe doit au moins contenir une majuscule, un chiffre et un caractère spécial !',
                 ],
                 'pattern' => [
-                    1 => '(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%])',
+                    1 => '/^[a-zA-Z0-9\\-\\_]+$/',
                 ],
                 'match' => [
                     1 => false,
