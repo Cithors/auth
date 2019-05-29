@@ -9,6 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use App\Form\UpdateFormType;
 
 class UpdateUserController extends AbstractController{
@@ -32,7 +33,8 @@ class UpdateUserController extends AbstractController{
                     $form->get('password')->getData()
                 )
             );
-
+            $date = new \Datetime("today");
+            $user->setDateModif($date);
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->flush();
 

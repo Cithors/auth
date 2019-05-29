@@ -4,7 +4,10 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Security\Core\Validator\Constraints as SecurityAssert;
+
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
@@ -21,6 +24,10 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=180, unique=true)
+     * @Assert\Email(
+     *     message = "The email '{{ value }}' is not a valid email.",
+     *     checkMX = true
+     * )
      */
     private $email;
 
@@ -64,6 +71,13 @@ class User implements UserInterface
      * @ORM\Column(type="string", length=255)
      */
     private $avatar;
+/*
+    /**
+     * @SecurityAssert\UserPassword(
+     *     message = "Wrong value for your current password"
+     * )
+     */
+    //protected $oldPassword;
 
     public function getId(): ?int
     {
@@ -215,6 +229,17 @@ class User implements UserInterface
         return $this;
     }
 
+    /*public function getoldPassword(): string
+    {
+        return (string) $this->oldPassword;
+    }
+
+    public function setoldPassword(string $oldPassword): self
+    {
+        $this->password = $oldPassword;
+
+        return $this;
+    }*/
     public function __construct()
     {
         $this->date_creation = new \Datetime("today");
