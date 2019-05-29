@@ -105,15 +105,15 @@ class __TwigTemplate_6151cab574e50140cd81778352cbd3bee2dd54a0351d3775926c5b02c8e
                 </td>
                 <td>";
                 // line 39
-                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "datenaissance", [], "any", false, false, false, 39), "m/d/Y"), "html", null, true);
+                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "datenaissance", [], "any", false, false, false, 39), "d/m/Y"), "html", null, true);
                 echo "</td>
                 <td>";
                 // line 40
-                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "datecreation", [], "any", false, false, false, 40), "m/d/Y"), "html", null, true);
+                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "datecreation", [], "any", false, false, false, 40), "d/m/Y"), "html", null, true);
                 echo "</td>
                 <td>";
                 // line 41
-                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "datemodif", [], "any", false, false, false, 41), "m/d/Y"), "html", null, true);
+                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "datemodif", [], "any", false, false, false, 41), "d/m/Y"), "html", null, true);
                 echo "</td>
                 <td>
                     <a href=\"/deluser?id=";
@@ -210,9 +210,9 @@ class __TwigTemplate_6151cab574e50140cd81778352cbd3bee2dd54a0351d3775926c5b02c8e
                 <td>
                     <img src=\"{{ user.avatar }}\" alt=\"avatar-{{ user.nom | upper }}-{{ user.prenom | capitalize }}\" width=\"40\">
                 </td>
-                <td>{{ user.datenaissance | date('m/d/Y') }}</td>
-                <td>{{ user.datecreation | date('m/d/Y') }}</td>
-                <td>{{ user.datemodif | date('m/d/Y') }}</td>
+                <td>{{ user.datenaissance | date('d/m/Y') }}</td>
+                <td>{{ user.datecreation | date('d/m/Y') }}</td>
+                <td>{{ user.datemodif | date('d/m/Y') }}</td>
                 <td>
                     <a href=\"/deluser?id={{ user.id }}\" class=\"btn btn-primary\">Supprimer</a>
                     <a href=\"/updateuser?id={{ user.id }}\" class=\"btn btn-primary\">Modifier</a>

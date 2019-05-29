@@ -26,11 +26,6 @@ class DelUserController extends AbstractController{
         $em->remove($user['0']);
         $em->flush();
 
-        $liste = $this->getDoctrine()->getManager();
-        $tab = $liste->getRepository(User::class)->findAll();
-
-        return $this->render('home/upuser.html.twig', [
-            'registrationForm' => $form->createView(),
-        ]);
+        return $this->redirectToRoute('home');
     }
 }
