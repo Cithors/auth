@@ -32,7 +32,6 @@ class srcApp_KernelDevDebugContainerUrlGenerator extends Symfony\Component\Routi
         '_profiler_router' => [['token'], ['_controller' => 'web_profiler.controller.router::panelAction'], [], [['text', '/router'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
         '_profiler_exception' => [['token'], ['_controller' => 'web_profiler.controller.exception::showAction'], [], [['text', '/exception'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
         '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception::cssAction'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
-        'index' => [[], ['_controller' => 'App\\Controller\\IndexController::index'], [], [['text', '/']], [], []],
         'home' => [[], ['_controller' => 'App\\Controller\\UserController::main'], [], [['text', '/home']], [], []],
         'update.home' => [[], ['_controller' => 'App\\Controller\\UserController::up'], [], [['text', '/updateuser']], [], []],
         'deluser' => [[], ['_controller' => 'App\\Controller\\UserController::del'], [], [['text', '/deluser']], [], []],
@@ -41,6 +40,7 @@ class srcApp_KernelDevDebugContainerUrlGenerator extends Symfony\Component\Routi
         'app_register' => [[], ['_controller' => 'App\\Controller\\UserController::register'], [], [['text', '/register']], [], []],
         'app_login' => [[], ['_controller' => 'App\\Controller\\UserController::login'], [], [['text', '/login']], [], []],
         'app_logout' => [[], ['_controller' => 'App\\Controller\\UserController::logout'], [], [['text', '/logout']], [], []],
+        'homepage' => [[], ['path' => '/login', 'permanent' => true, '_controller' => 'Symfony\\Bundle\\FrameworkBundle\\Controller\\RedirectController::urlRedirectAction'], [], [['text', '/']], [], []],
     ];
         }
     }
