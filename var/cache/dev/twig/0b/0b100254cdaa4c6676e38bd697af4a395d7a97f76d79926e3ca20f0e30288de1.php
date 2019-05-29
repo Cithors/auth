@@ -84,7 +84,7 @@ class __TwigTemplate_f46d8b75ccc48632987d0b0e1e69d0d56cb62e2898fb3e8880e2e821669
         echo "    ";
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) {
             // line 7
-            echo "        <script>window.location.href = '/home'</script>
+            echo "        <script>window.location.href = '/user'</script>
     ";
         } else {
             // line 9
@@ -127,9 +127,12 @@ class __TwigTemplate_f46d8b75ccc48632987d0b0e1e69d0d56cb62e2898fb3e8880e2e821669
                 Se connecter
             </button>
         </form>
+        <div>
+            <a href=\"/register\">Pas de compte ? Je m'inscris !</a>
+        </div>
     ";
         }
-        // line 35
+        // line 38
         echo "
 ";
         
@@ -152,7 +155,7 @@ class __TwigTemplate_f46d8b75ccc48632987d0b0e1e69d0d56cb62e2898fb3e8880e2e821669
 
     public function getDebugInfo()
     {
-        return array (  133 => 35,  119 => 23,  115 => 21,  107 => 16,  102 => 13,  96 => 11,  94 => 10,  91 => 9,  87 => 7,  84 => 6,  75 => 5,  57 => 3,  35 => 1,);
+        return array (  136 => 38,  119 => 23,  115 => 21,  107 => 16,  102 => 13,  96 => 11,  94 => 10,  91 => 9,  87 => 7,  84 => 6,  75 => 5,  57 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -163,7 +166,7 @@ class __TwigTemplate_f46d8b75ccc48632987d0b0e1e69d0d56cb62e2898fb3e8880e2e821669
 
 {% block body %}
     {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-        <script>window.location.href = '/home'</script>
+        <script>window.location.href = '/user'</script>
     {% else %}
         <form method=\"post\">
             {% if error %}
@@ -190,6 +193,9 @@ class __TwigTemplate_f46d8b75ccc48632987d0b0e1e69d0d56cb62e2898fb3e8880e2e821669
                 Se connecter
             </button>
         </form>
+        <div>
+            <a href=\"/register\">Pas de compte ? Je m'inscris !</a>
+        </div>
     {% endif %}
 
 {% endblock %}

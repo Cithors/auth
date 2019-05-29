@@ -36,10 +36,10 @@ class AddUserController extends AbstractController
 
             // do anything else you need here, like send an email
 
-            return $this->redirectToRoute('home');
+            return $this->redirectToRoute('user');
         }
 
-        return $this->render('home/adduser.html.twig', [
+        return $this->render('user/adduser.html.twig', [
             'registrationForm' => $form->createView(),
         ]);
     }

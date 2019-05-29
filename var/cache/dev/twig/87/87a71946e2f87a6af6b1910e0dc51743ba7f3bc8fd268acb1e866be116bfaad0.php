@@ -84,7 +84,7 @@ class __TwigTemplate_09075afd57835e76f976b07a023901b041340fbea0a2e95daa296f2682b
         echo "    ";
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) {
             // line 7
-            echo "        <script>window.location.href = '/home'</script>
+            echo "        <script>window.location.href = '/user'</script>
     ";
         } else {
             // line 9
@@ -127,6 +127,7 @@ class __TwigTemplate_09075afd57835e76f976b07a023901b041340fbea0a2e95daa296f2682b
             // line 20
             echo             $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 20, $this->source); })()), 'form_end');
             echo "
+        <a href=\"/login\">Déjà un compte ? Je me connecte !</a>
     ";
         }
         
@@ -160,7 +161,7 @@ class __TwigTemplate_09075afd57835e76f976b07a023901b041340fbea0a2e95daa296f2682b
 
 {% block body %}
     {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-        <script>window.location.href = '/home'</script>
+        <script>window.location.href = '/user'</script>
     {% else %}
         <h1>S'incrire</h1>
 
@@ -174,6 +175,7 @@ class __TwigTemplate_09075afd57835e76f976b07a023901b041340fbea0a2e95daa296f2682b
         {{ form_row(registrationForm.avatar) }}
         <button class=\"btn btn-primary\">Valider</button>
         {{ form_end(registrationForm) }}
+        <a href=\"/login\">Déjà un compte ? Je me connecte !</a>
     {% endif %}
 {% endblock %}
 ", "registration/register.html.twig", "C:\\laragon\\www\\auth\\templates\\registration\\register.html.twig");

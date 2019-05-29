@@ -13,7 +13,7 @@ class DelUserController extends AbstractController{
      */
     public function main(Request $request){
         $id = dump($request->query->get('id'));
-        return $this->render('home/deluser.html.twig',['id' => $id]);
+        return $this->render('user/deluser.html.twig',['id' => $id]);
     }
 
     /**
@@ -26,6 +26,6 @@ class DelUserController extends AbstractController{
         $em->remove($user['0']);
         $em->flush();
 
-        return $this->redirectToRoute('home');
+        return $this->redirectToRoute('user');
     }
 }

@@ -8,10 +8,10 @@
         [
             'Symfony\\Component\\Routing\\Annotation\\Route' => [
                 'path' => [
-                    '/home',
+                    '/user',
                 ],
                 'name' => [
-                    'home',
+                    'user',
                 ],
             ],
         ],

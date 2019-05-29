@@ -4,7 +4,7 @@
 
 {% block body %}
     {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-        <script>window.location.href = '/home'</script>
+        <script>window.location.href = '/user'</script>
     {% else %}
         <form method="post">
             {% if error %}
@@ -31,6 +31,9 @@
                 Se connecter
             </button>
         </form>
+        <div>
+            <a href="/register">Pas de compte ? Je m'inscris !</a>
+        </div>
     {% endif %}
 
 {% endblock %}

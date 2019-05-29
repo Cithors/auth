@@ -38,9 +38,9 @@ class UpdateUserController extends AbstractController{
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->flush();
 
-            return $this->redirectToRoute('home');
+            return $this->redirectToRoute('user');
         }
 
-        return $this->render("home/upuser.html.twig", ['registrationForm'=>$form->createView()]);
+        return $this->render("user/upuser.html.twig", ['registrationForm'=>$form->createView()]);
     }
 }

@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* home/upuser.html.twig */
+/* user/upuser.html.twig */
 class __TwigTemplate_1fb882c524f29595eee5146492cfc4331d84f7f34c099cf34db1c8d46e5886c9 extends \Twig\Template
 {
     private $source;
@@ -38,12 +38,12 @@ class __TwigTemplate_1fb882c524f29595eee5146492cfc4331d84f7f34c099cf34db1c8d46e5
     protected function doDisplay(array $context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "home/upuser.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "user/upuser.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "home/upuser.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "user/upuser.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", "home/upuser.html.twig", 1);
+        $this->parent = $this->loadTemplate("base.html.twig", "user/upuser.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -112,7 +112,7 @@ class __TwigTemplate_1fb882c524f29595eee5146492cfc4331d84f7f34c099cf34db1c8d46e5
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 14, $this->source); })()), "datenaissance", [], "any", false, false, false, 14), 'row');
         echo "
         <button class=\"btn btn-primary\">Valider</button>
-        <a href=\"/home\" class=\"btn btn-primary\">Annuler</a>
+        <a href=\"/user\" class=\"btn btn-primary\">Annuler</a>
     ";
         // line 17
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 17, $this->source); })()), 'form_end');
@@ -129,7 +129,7 @@ class __TwigTemplate_1fb882c524f29595eee5146492cfc4331d84f7f34c099cf34db1c8d46e5
 
     public function getTemplateName()
     {
-        return "home/upuser.html.twig";
+        return "user/upuser.html.twig";
     }
 
     public function isTraitable()
@@ -159,10 +159,10 @@ class __TwigTemplate_1fb882c524f29595eee5146492cfc4331d84f7f34c099cf34db1c8d46e5
         {{ form_row(registrationForm.avatar) }}
         {{ form_row(registrationForm.datenaissance) }}
         <button class=\"btn btn-primary\">Valider</button>
-        <a href=\"/home\" class=\"btn btn-primary\">Annuler</a>
+        <a href=\"/user\" class=\"btn btn-primary\">Annuler</a>
     {{ form_end(registrationForm) }}
 
 {% endblock %}
-", "home/upuser.html.twig", "C:\\laragon\\www\\auth\\templates\\home\\upuser.html.twig");
+", "user/upuser.html.twig", "C:\\laragon\\www\\auth\\templates\\user\\upuser.html.twig");
     }
 }

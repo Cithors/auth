@@ -21,13 +21,14 @@ class srcApp_KernelDevDebugContainerUrlMatcher extends Symfony\Bundle\FrameworkB
             '/_profiler/phpinfo' => [[['_route' => '_profiler_phpinfo', '_controller' => 'web_profiler.controller.profiler::phpinfoAction'], null, null, null, false, false, null]],
             '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
             '/adduser' => [[['_route' => 'ajout.user', '_controller' => 'App\\Controller\\AddUserController::register'], null, null, null, false, false, null]],
+            '/admin' => [[['_route' => 'admin', '_controller' => 'App\\Controller\\AdminController::main'], null, null, null, false, false, null]],
             '/deluser' => [[['_route' => 'deluser', '_controller' => 'App\\Controller\\DelUserController::main'], null, null, null, false, false, null]],
             '/traitement/deluser' => [[['_route' => 'trait.deluser', '_controller' => 'App\\Controller\\DelUserController::valide'], null, null, null, false, false, null]],
-            '/home' => [[['_route' => 'home', '_controller' => 'App\\Controller\\HomeController::main'], null, null, null, false, false, null]],
             '/register' => [[['_route' => 'app_register', '_controller' => 'App\\Controller\\RegistrationController::register'], null, null, null, false, false, null]],
             '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],
             '/logout' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\SecurityController::logout'], null, ['GET' => 0], null, false, false, null]],
             '/updateuser' => [[['_route' => 'update.user', '_controller' => 'App\\Controller\\UpdateUserController::main'], null, null, null, false, false, null]],
+            '/user' => [[['_route' => 'user', '_controller' => 'App\\Controller\\UserController::main'], null, null, null, false, false, null]],
         ];
         $this->regexpList = [
             0 => '{^(?'

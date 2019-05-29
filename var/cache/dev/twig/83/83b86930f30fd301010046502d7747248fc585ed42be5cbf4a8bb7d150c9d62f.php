@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* home/adduser.html.twig */
+/* user/adduser.html.twig */
 class __TwigTemplate_a959bea5b04b4ecc5b5afd9a449b88852b2a8352acce45e4c6f5ea797c8ad525 extends \Twig\Template
 {
     private $source;
@@ -38,12 +38,12 @@ class __TwigTemplate_a959bea5b04b4ecc5b5afd9a449b88852b2a8352acce45e4c6f5ea797c8
     protected function doDisplay(array $context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "home/adduser.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "user/adduser.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "home/adduser.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "user/adduser.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", "home/adduser.html.twig", 1);
+        $this->parent = $this->loadTemplate("base.html.twig", "user/adduser.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -81,42 +81,51 @@ class __TwigTemplate_a959bea5b04b4ecc5b5afd9a449b88852b2a8352acce45e4c6f5ea797c8
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1>Ajout d'un nouvel utilisateur</h1>
+        echo "    ";
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) {
+            // line 7
+            echo "
+    <h1>Ajout d'un nouvel utilisateur</h1>
 
     ";
-        // line 8
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 8, $this->source); })()), 'form_start');
-        echo "
+            // line 10
+            echo             $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 10, $this->source); })()), 'form_start');
+            echo "
         ";
-        // line 9
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 9, $this->source); })()), "email", [], "any", false, false, false, 9), 'row');
-        echo "
+            // line 11
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 11, $this->source); })()), "email", [], "any", false, false, false, 11), 'row');
+            echo "
         ";
-        // line 10
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 10, $this->source); })()), "plainPassword", [], "any", false, false, false, 10), 'row');
-        echo "
+            // line 12
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 12, $this->source); })()), "plainPassword", [], "any", false, false, false, 12), 'row');
+            echo "
         ";
-        // line 11
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 11, $this->source); })()), "nom", [], "any", false, false, false, 11), 'row');
-        echo "
+            // line 13
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 13, $this->source); })()), "nom", [], "any", false, false, false, 13), 'row');
+            echo "
         ";
-        // line 12
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 12, $this->source); })()), "prenom", [], "any", false, false, false, 12), 'row');
-        echo "
+            // line 14
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 14, $this->source); })()), "prenom", [], "any", false, false, false, 14), 'row');
+            echo "
         ";
-        // line 13
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 13, $this->source); })()), "datenaissance", [], "any", false, false, false, 13), 'row');
-        echo "
+            // line 15
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 15, $this->source); })()), "datenaissance", [], "any", false, false, false, 15), 'row');
+            echo "
         ";
-        // line 14
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 14, $this->source); })()), "avatar", [], "any", false, false, false, 14), 'row');
-        echo "
+            // line 16
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 16, $this->source); })()), "avatar", [], "any", false, false, false, 16), 'row');
+            echo "
         <button class=\"btn btn-primary\">Valider</button>
     ";
-        // line 16
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 16, $this->source); })()), 'form_end');
-        echo "
-";
+            // line 18
+            echo             $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 18, $this->source); })()), 'form_end');
+            echo "
+    ";
+        } else {
+            // line 20
+            echo "        <script>window.location.href = '/login'</script>
+    ";
+        }
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -127,7 +136,7 @@ class __TwigTemplate_a959bea5b04b4ecc5b5afd9a449b88852b2a8352acce45e4c6f5ea797c8
 
     public function getTemplateName()
     {
-        return "home/adduser.html.twig";
+        return "user/adduser.html.twig";
     }
 
     public function isTraitable()
@@ -137,7 +146,7 @@ class __TwigTemplate_a959bea5b04b4ecc5b5afd9a449b88852b2a8352acce45e4c6f5ea797c8
 
     public function getDebugInfo()
     {
-        return array (  117 => 16,  112 => 14,  108 => 13,  104 => 12,  100 => 11,  96 => 10,  92 => 9,  88 => 8,  84 => 6,  75 => 5,  57 => 3,  35 => 1,);
+        return array (  126 => 20,  121 => 18,  116 => 16,  112 => 15,  108 => 14,  104 => 13,  100 => 12,  96 => 11,  92 => 10,  87 => 7,  84 => 6,  75 => 5,  57 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -147,6 +156,8 @@ class __TwigTemplate_a959bea5b04b4ecc5b5afd9a449b88852b2a8352acce45e4c6f5ea797c8
 {% block title %}Ajout utilisateur{% endblock %}
 
 {% block body %}
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+
     <h1>Ajout d'un nouvel utilisateur</h1>
 
     {{ form_start(registrationForm) }}
@@ -158,7 +169,10 @@ class __TwigTemplate_a959bea5b04b4ecc5b5afd9a449b88852b2a8352acce45e4c6f5ea797c8
         {{ form_row(registrationForm.avatar) }}
         <button class=\"btn btn-primary\">Valider</button>
     {{ form_end(registrationForm) }}
+    {% else %}
+        <script>window.location.href = '/login'</script>
+    {% endif %}
 {% endblock %}
-", "home/adduser.html.twig", "C:\\laragon\\www\\auth\\templates\\home\\adduser.html.twig");
+", "user/adduser.html.twig", "C:\\laragon\\www\\auth\\templates\\user\\adduser.html.twig");
     }
 }

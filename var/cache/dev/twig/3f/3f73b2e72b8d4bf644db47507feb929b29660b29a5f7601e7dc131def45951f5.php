@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* home/index.html.twig */
+/* user/index.html.twig */
 class __TwigTemplate_6151cab574e50140cd81778352cbd3bee2dd54a0351d3775926c5b02c8e5aea6 extends \Twig\Template
 {
     private $source;
@@ -32,10 +32,10 @@ class __TwigTemplate_6151cab574e50140cd81778352cbd3bee2dd54a0351d3775926c5b02c8e
     protected function doDisplay(array $context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "home/index.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "user/index.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "home/index.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "user/index.html.twig"));
 
         // line 1
         echo "
@@ -137,15 +137,10 @@ class __TwigTemplate_6151cab574e50140cd81778352cbd3bee2dd54a0351d3775926c5b02c8e
     ";
         } else {
             // line 51
-            echo "        <div align=\"center\">
-            <p>Il faut se connecter afin d'acceder à cet espace !</p>
-            <a href=\"/login\" class=\"btn btn-primary\">Se connecter</a>
-            <a href=\"/register\" class=\"btn btn-primary\">Je n'ai pas de compte (m'inscrire)</a>
-        </div>
-
+            echo "        <script>window.location.href = '/login'</script>
     ";
         }
-        // line 58
+        // line 53
         echo "    </body>
 </html>";
         
@@ -158,7 +153,7 @@ class __TwigTemplate_6151cab574e50140cd81778352cbd3bee2dd54a0351d3775926c5b02c8e
 
     public function getTemplateName()
     {
-        return "home/index.html.twig";
+        return "user/index.html.twig";
     }
 
     public function isTraitable()
@@ -168,7 +163,7 @@ class __TwigTemplate_6151cab574e50140cd81778352cbd3bee2dd54a0351d3775926c5b02c8e
 
     public function getDebugInfo()
     {
-        return array (  149 => 58,  140 => 51,  136 => 49,  126 => 45,  122 => 44,  117 => 42,  113 => 41,  109 => 40,  100 => 38,  95 => 36,  91 => 35,  87 => 34,  83 => 33,  80 => 32,  76 => 31,  53 => 10,  51 => 9,  41 => 1,);
+        return array (  144 => 53,  140 => 51,  136 => 49,  126 => 45,  122 => 44,  117 => 42,  113 => 41,  109 => 40,  100 => 38,  95 => 36,  91 => 35,  87 => 34,  83 => 33,  80 => 32,  76 => 31,  53 => 10,  51 => 9,  41 => 1,);
     }
 
     public function getSourceContext()
@@ -223,14 +218,9 @@ class __TwigTemplate_6151cab574e50140cd81778352cbd3bee2dd54a0351d3775926c5b02c8e
         {% endfor %}
         </table>
     {% else %}
-        <div align=\"center\">
-            <p>Il faut se connecter afin d'acceder à cet espace !</p>
-            <a href=\"/login\" class=\"btn btn-primary\">Se connecter</a>
-            <a href=\"/register\" class=\"btn btn-primary\">Je n'ai pas de compte (m'inscrire)</a>
-        </div>
-
+        <script>window.location.href = '/login'</script>
     {% endif %}
     </body>
-</html>", "home/index.html.twig", "C:\\laragon\\www\\auth\\templates\\home\\index.html.twig");
+</html>", "user/index.html.twig", "C:\\laragon\\www\\auth\\templates\\user\\index.html.twig");
     }
 }
