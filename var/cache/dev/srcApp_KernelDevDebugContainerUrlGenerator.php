@@ -32,14 +32,15 @@ class srcApp_KernelDevDebugContainerUrlGenerator extends Symfony\Component\Routi
         '_profiler_router' => [['token'], ['_controller' => 'web_profiler.controller.router::panelAction'], [], [['text', '/router'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
         '_profiler_exception' => [['token'], ['_controller' => 'web_profiler.controller.exception::showAction'], [], [['text', '/exception'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
         '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception::cssAction'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
-        'ajout.user' => [[], ['_controller' => 'App\\Controller\\AddUserController::register'], [], [['text', '/adduser']], [], []],
-        'deluser' => [[], ['_controller' => 'App\\Controller\\DelUserController::main'], [], [['text', '/deluser']], [], []],
-        'trait.deluser' => [[], ['_controller' => 'App\\Controller\\DelUserController::valide'], [], [['text', '/traitement/deluser']], [], []],
-        'app_register' => [[], ['_controller' => 'App\\Controller\\RegistrationController::register'], [], [['text', '/register']], [], []],
-        'app_login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], []],
-        'app_logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/logout']], [], []],
-        'update.home' => [[], ['_controller' => 'App\\Controller\\UpdateUserController::main'], [], [['text', '/updateuser']], [], []],
+        'index' => [[], ['_controller' => 'App\\Controller\\IndexController::index'], [], [['text', '/']], [], []],
         'home' => [[], ['_controller' => 'App\\Controller\\UserController::main'], [], [['text', '/home']], [], []],
+        'update.home' => [[], ['_controller' => 'App\\Controller\\UserController::up'], [], [['text', '/updateuser']], [], []],
+        'deluser' => [[], ['_controller' => 'App\\Controller\\UserController::del'], [], [['text', '/deluser']], [], []],
+        'trait.deluser' => [[], ['_controller' => 'App\\Controller\\UserController::valide'], [], [['text', '/traitement/deluser']], [], []],
+        'ajout.user' => [[], ['_controller' => 'App\\Controller\\UserController::adduser'], [], [['text', '/adduser']], [], []],
+        'app_register' => [[], ['_controller' => 'App\\Controller\\UserController::register'], [], [['text', '/register']], [], []],
+        'app_login' => [[], ['_controller' => 'App\\Controller\\UserController::login'], [], [['text', '/login']], [], []],
+        'app_logout' => [[], ['_controller' => 'App\\Controller\\UserController::logout'], [], [['text', '/logout']], [], []],
     ];
         }
     }

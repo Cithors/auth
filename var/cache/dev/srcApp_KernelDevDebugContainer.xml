@@ -408,39 +408,11 @@
     <service id="EasyCorp\EasyLog\EasyLogHandler" class="EasyCorp\EasyLog\EasyLogHandler" public="false">
       <argument>C:\laragon\www\auth\var\log/dev.log</argument>
     </service>
-    <service id="App\Controller\AddUserController" class="App\Controller\AddUserController" public="true" autowire="true" autoconfigure="true">
+    <service id="App\Controller\IndexController" class="App\Controller\IndexController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
-        <argument type="service" id=".service_locator.KTVqfp6.App\Controller\AddUserController"/>
-      </call>
-    </service>
-    <service id="App\Controller\DelUserController" class="App\Controller\DelUserController" public="true" autowire="true" autoconfigure="true">
-      <tag name="controller.service_arguments"/>
-      <tag name="container.service_subscriber"/>
-      <call method="setContainer">
-        <argument type="service" id=".service_locator.KTVqfp6.App\Controller\DelUserController"/>
-      </call>
-    </service>
-    <service id="App\Controller\RegistrationController" class="App\Controller\RegistrationController" public="true" autowire="true" autoconfigure="true">
-      <tag name="controller.service_arguments"/>
-      <tag name="container.service_subscriber"/>
-      <call method="setContainer">
-        <argument type="service" id=".service_locator.KTVqfp6.App\Controller\RegistrationController"/>
-      </call>
-    </service>
-    <service id="App\Controller\SecurityController" class="App\Controller\SecurityController" public="true" autowire="true" autoconfigure="true">
-      <tag name="controller.service_arguments"/>
-      <tag name="container.service_subscriber"/>
-      <call method="setContainer">
-        <argument type="service" id=".service_locator.KTVqfp6.App\Controller\SecurityController"/>
-      </call>
-    </service>
-    <service id="App\Controller\UpdateUserController" class="App\Controller\UpdateUserController" public="true" autowire="true" autoconfigure="true">
-      <tag name="controller.service_arguments"/>
-      <tag name="container.service_subscriber"/>
-      <call method="setContainer">
-        <argument type="service" id=".service_locator.KTVqfp6.App\Controller\UpdateUserController"/>
+        <argument type="service" id=".service_locator.KTVqfp6.App\Controller\IndexController"/>
       </call>
     </service>
     <service id="App\Controller\UserController" class="App\Controller\UserController" public="true" autowire="true" autoconfigure="true">
@@ -2019,14 +1991,6 @@
       </call>
       <call method="addListener">
         <argument>kernel.request</argument>
-        <argument type="collection">
-          <argument type="service" id="debug.debug_handlers_listener"/>
-          <argument>configure</argument>
-        </argument>
-        <argument>2048</argument>
-      </call>
-      <call method="addListener">
-        <argument>console.command</argument>
         <argument type="collection">
           <argument type="service" id="debug.debug_handlers_listener"/>
           <argument>configure</argument>
@@ -4474,21 +4438,9 @@
         </argument>
       </call>
     </service>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\AddUserController" class="App\Controller\AddUserController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\AddUserController" class="App\Controller\AddUserController" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\AddUserController" class="App\Controller\AddUserController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\DelUserController" class="App\Controller\DelUserController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\DelUserController" class="App\Controller\DelUserController" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\DelUserController" class="App\Controller\DelUserController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\RegistrationController" class="App\Controller\RegistrationController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\RegistrationController" class="App\Controller\RegistrationController" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\RegistrationController" class="App\Controller\RegistrationController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\UpdateUserController" class="App\Controller\UpdateUserController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\UpdateUserController" class="App\Controller\UpdateUserController" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\UpdateUserController" class="App\Controller\UpdateUserController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\IndexController" class="App\Controller\IndexController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\IndexController" class="App\Controller\IndexController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\IndexController" class="App\Controller\IndexController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\UserController" class="App\Controller\UserController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\UserController" class="App\Controller\UserController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\UserController" class="App\Controller\UserController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -4674,17 +4626,17 @@
         <argument key="authenticationUtils" type="service" id="security.authentication_utils"/>
       </argument>
     </service>
-    <service id=".service_locator.CWp3COC" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.YVc53H1" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="App\Controller\AddUserController::register" type="service" id=".service_locator.lm3AYgL"/>
-        <argument key="App\Controller\RegistrationController::register" type="service" id=".service_locator.lm3AYgL"/>
-        <argument key="App\Controller\SecurityController::login" type="service" id=".service_locator.EbLunuf"/>
-        <argument key="App\Controller\UpdateUserController::main" type="service" id=".service_locator.lm3AYgL"/>
-        <argument key="App\Controller\AddUserController:register" type="service" id=".service_locator.lm3AYgL"/>
-        <argument key="App\Controller\RegistrationController:register" type="service" id=".service_locator.lm3AYgL"/>
-        <argument key="App\Controller\SecurityController:login" type="service" id=".service_locator.EbLunuf"/>
-        <argument key="App\Controller\UpdateUserController:main" type="service" id=".service_locator.lm3AYgL"/>
+        <argument key="App\Controller\UserController::adduser" type="service" id=".service_locator.lm3AYgL"/>
+        <argument key="App\Controller\UserController::login" type="service" id=".service_locator.EbLunuf"/>
+        <argument key="App\Controller\UserController::register" type="service" id=".service_locator.lm3AYgL"/>
+        <argument key="App\Controller\UserController::up" type="service" id=".service_locator.lm3AYgL"/>
+        <argument key="App\Controller\UserController:adduser" type="service" id=".service_locator.lm3AYgL"/>
+        <argument key="App\Controller\UserController:login" type="service" id=".service_locator.EbLunuf"/>
+        <argument key="App\Controller\UserController:register" type="service" id=".service_locator.lm3AYgL"/>
+        <argument key="App\Controller\UserController:up" type="service" id=".service_locator.lm3AYgL"/>
       </argument>
     </service>
     <service id=".service_locator.37xBtZ2" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
@@ -4950,33 +4902,9 @@
         <argument key="twig" type="service" id="twig" on-invalid="ignore"/>
       </argument>
     </service>
-    <service id=".service_locator.KTVqfp6.App\Controller\AddUserController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
-      <tag name="container.service_locator_context" id="App\Controller\AddUserController"/>
-      <argument>App\Controller\AddUserController</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.KTVqfp6" method="withContext"/>
-    </service>
-    <service id=".service_locator.KTVqfp6.App\Controller\DelUserController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
-      <tag name="container.service_locator_context" id="App\Controller\DelUserController"/>
-      <argument>App\Controller\DelUserController</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.KTVqfp6" method="withContext"/>
-    </service>
-    <service id=".service_locator.KTVqfp6.App\Controller\RegistrationController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
-      <tag name="container.service_locator_context" id="App\Controller\RegistrationController"/>
-      <argument>App\Controller\RegistrationController</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.KTVqfp6" method="withContext"/>
-    </service>
-    <service id=".service_locator.KTVqfp6.App\Controller\SecurityController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
-      <tag name="container.service_locator_context" id="App\Controller\SecurityController"/>
-      <argument>App\Controller\SecurityController</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.KTVqfp6" method="withContext"/>
-    </service>
-    <service id=".service_locator.KTVqfp6.App\Controller\UpdateUserController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
-      <tag name="container.service_locator_context" id="App\Controller\UpdateUserController"/>
-      <argument>App\Controller\UpdateUserController</argument>
+    <service id=".service_locator.KTVqfp6.App\Controller\IndexController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\IndexController"/>
+      <argument>App\Controller\IndexController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.KTVqfp6" method="withContext"/>
     </service>
@@ -5078,7 +5006,7 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.CWp3COC"/>
+      <argument type="service" id=".service_locator.YVc53H1"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
@@ -5411,7 +5339,7 @@
     <service id="Twig\Environment" alias="twig" public="false"/>
     <service id="logger" alias="monolog.logger"/>
     <service id="Psr\Log\LoggerInterface" alias="monolog.logger" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.CWp3COC"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.YVc53H1"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="validator" alias="debug.validator" public="true"/>
