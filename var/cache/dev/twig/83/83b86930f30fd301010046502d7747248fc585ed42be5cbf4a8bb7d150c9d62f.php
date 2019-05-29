@@ -82,7 +82,7 @@ class __TwigTemplate_a959bea5b04b4ecc5b5afd9a449b88852b2a8352acce45e4c6f5ea797c8
 
         // line 6
         echo "    ";
-        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) {
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
             // line 7
             echo "
     <h1>Ajout d'un nouvel utilisateur</h1>
@@ -97,7 +97,7 @@ class __TwigTemplate_a959bea5b04b4ecc5b5afd9a449b88852b2a8352acce45e4c6f5ea797c8
             echo "
         ";
             // line 12
-            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 12, $this->source); })()), "plainPassword", [], "any", false, false, false, 12), 'row');
+            echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 12, $this->source); })()), "password", [], "any", false, false, false, 12), 'row');
             echo "
         ";
             // line 13
@@ -156,13 +156,13 @@ class __TwigTemplate_a959bea5b04b4ecc5b5afd9a449b88852b2a8352acce45e4c6f5ea797c8
 {% block title %}Ajout utilisateur{% endblock %}
 
 {% block body %}
-    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+    {% if is_granted('ROLE_ADMIN') %}
 
     <h1>Ajout d'un nouvel utilisateur</h1>
 
     {{ form_start(registrationForm) }}
         {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword) }}
+        {{ form_row(registrationForm.password) }}
         {{ form_row(registrationForm.nom) }}
         {{ form_row(registrationForm.prenom) }}
         {{ form_row(registrationForm.datenaissance) }}

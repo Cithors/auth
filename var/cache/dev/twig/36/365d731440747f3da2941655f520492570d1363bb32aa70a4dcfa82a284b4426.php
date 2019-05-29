@@ -82,7 +82,7 @@ class __TwigTemplate_1fb882c524f29595eee5146492cfc4331d84f7f34c099cf34db1c8d46e5
 
         // line 6
         echo "    ";
-        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATIED_FULLY")) {
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
             // line 7
             echo "    <h1>Modification d'un utilisateur</h1>
 
@@ -156,7 +156,7 @@ class __TwigTemplate_1fb882c524f29595eee5146492cfc4331d84f7f34c099cf34db1c8d46e5
 {% block title %}Modification utilisateur{% endblock %}
 
 {% block body %}
-    {% if is_granted('IS_AUTHENTICATIED_FULLY') %}
+    {% if is_granted('ROLE_ADMIN') %}
     <h1>Modification d'un utilisateur</h1>
 
     {{ form_start(registrationForm) }}

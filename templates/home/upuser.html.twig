@@ -3,7 +3,7 @@
 {% block title %}Modification utilisateur{% endblock %}
 
 {% block body %}
-    {% if is_granted('IS_AUTHENTICATIED_FULLY') %}
+    {% if is_granted('ROLE_ADMIN') %}
     <h1>Modification d'un utilisateur</h1>
 
     {{ form_start(registrationForm) }}

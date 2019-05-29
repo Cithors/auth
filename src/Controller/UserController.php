@@ -101,7 +101,7 @@ class UserController extends AbstractController{
             return $this->redirectToRoute('user');
         }
 
-        return $this->render('user/adduser.html.twig', [
+        return $this->render('home/adduser.html.twig', [
             'registrationForm' => $form->createView(),
         ]);
     }
