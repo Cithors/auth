@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* user/adduser.html.twig */
+/* home/adduser.html.twig */
 class __TwigTemplate_a959bea5b04b4ecc5b5afd9a449b88852b2a8352acce45e4c6f5ea797c8ad525 extends \Twig\Template
 {
     private $source;
@@ -38,12 +38,12 @@ class __TwigTemplate_a959bea5b04b4ecc5b5afd9a449b88852b2a8352acce45e4c6f5ea797c8
     protected function doDisplay(array $context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "user/adduser.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "home/adduser.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "user/adduser.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "home/adduser.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", "user/adduser.html.twig", 1);
+        $this->parent = $this->loadTemplate("base.html.twig", "home/adduser.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -136,7 +136,7 @@ class __TwigTemplate_a959bea5b04b4ecc5b5afd9a449b88852b2a8352acce45e4c6f5ea797c8
 
     public function getTemplateName()
     {
-        return "user/adduser.html.twig";
+        return "home/adduser.html.twig";
     }
 
     public function isTraitable()
@@ -173,6 +173,6 @@ class __TwigTemplate_a959bea5b04b4ecc5b5afd9a449b88852b2a8352acce45e4c6f5ea797c8
         <script>window.location.href = '/login'</script>
     {% endif %}
 {% endblock %}
-", "user/adduser.html.twig", "C:\\laragon\\www\\auth\\templates\\user\\adduser.html.twig");
+", "home/adduser.html.twig", "C:\\laragon\\www\\auth\\templates\\home\\adduser.html.twig");
     }
 }

@@ -8,11 +8,11 @@ use App\Entity\User;
 
 class UserController extends AbstractController{
     /**
-     * @Route("/user", name="user")
+     * @Route("/home", name="home")
      */
     public function main(){
         $liste = $this->getDoctrine()->getManager();
         $tab = $liste->getRepository(User::class)->findAll();
-        return $this->render('user/index.html.twig', ['tab'=>$tab]);
+        return $this->render('home/index.html.twig', ['tab'=>$tab]);
     }
 }

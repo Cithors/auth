@@ -14,7 +14,7 @@ use App\Form\UpdateFormType;
 
 class UpdateUserController extends AbstractController{
     /**
-     * @Route("/updateuser",name="update.user")
+     * @Route("/updateuser",name="update.home")
      */
     public function main(Request $request, UserPasswordEncoderInterface $passwordEncoder){
         $id = dump($request->query->get('id'));
@@ -38,9 +38,9 @@ class UpdateUserController extends AbstractController{
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->flush();
 
-            return $this->redirectToRoute('user');
+            return $this->redirectToRoute('home');
         }
 
-        return $this->render("user/upuser.html.twig", ['registrationForm'=>$form->createView()]);
+        return $this->render("home/upuser.html.twig", ['registrationForm'=>$form->createView()]);
     }
 }

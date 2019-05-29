@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* user/deluser.html.twig */
+/* home/deluser.html.twig */
 class __TwigTemplate_961f93d44b090265b3234dda579180f91575be0dae35060ce5fbb6952cda4eae extends \Twig\Template
 {
     private $source;
@@ -32,10 +32,10 @@ class __TwigTemplate_961f93d44b090265b3234dda579180f91575be0dae35060ce5fbb6952cd
     protected function doDisplay(array $context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "user/deluser.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "home/deluser.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "user/deluser.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "home/deluser.html.twig"));
 
         // line 1
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATIED_FULLY")) {
@@ -52,7 +52,7 @@ class __TwigTemplate_961f93d44b090265b3234dda579180f91575be0dae35060ce5fbb6952cd
             // line 10
             echo twig_escape_filter($this->env, (isset($context["id"]) || array_key_exists("id", $context) ? $context["id"] : (function () { throw new RuntimeError('Variable "id" does not exist.', 10, $this->source); })()), "html", null, true);
             echo "\" class=\"btn btn-primary\">Oui</a>
-            <a href=\"/user\" class=\"btn btn-primary\">Annuler</a>
+            <a href=\"/home\" class=\"btn btn-primary\">Annuler</a>
         </div>
     </body>
 </html>
@@ -72,7 +72,7 @@ class __TwigTemplate_961f93d44b090265b3234dda579180f91575be0dae35060ce5fbb6952cd
 
     public function getTemplateName()
     {
-        return "user/deluser.html.twig";
+        return "home/deluser.html.twig";
     }
 
     public function isTraitable()
@@ -97,12 +97,12 @@ class __TwigTemplate_961f93d44b090265b3234dda579180f91575be0dae35060ce5fbb6952cd
         <div align=\"center\">
             <h1>Voulez-vous vraiment supprimer cet utilisateur ?</h1>
             <a href=\"/traitement/deluser?id={{ id }}\" class=\"btn btn-primary\">Oui</a>
-            <a href=\"/user\" class=\"btn btn-primary\">Annuler</a>
+            <a href=\"/home\" class=\"btn btn-primary\">Annuler</a>
         </div>
     </body>
 </html>
 {% else %}
     <script>window.location.href = '/login'</script>
-{% endif %}", "user/deluser.html.twig", "C:\\laragon\\www\\auth\\templates\\user\\deluser.html.twig");
+{% endif %}", "home/deluser.html.twig", "C:\\laragon\\www\\auth\\templates\\home\\deluser.html.twig");
     }
 }

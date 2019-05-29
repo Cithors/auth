@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* user/index.html.twig */
+/* home/index.html.twig */
 class __TwigTemplate_6151cab574e50140cd81778352cbd3bee2dd54a0351d3775926c5b02c8e5aea6 extends \Twig\Template
 {
     private $source;
@@ -32,116 +32,147 @@ class __TwigTemplate_6151cab574e50140cd81778352cbd3bee2dd54a0351d3775926c5b02c8e
     protected function doDisplay(array $context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "user/index.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "home/index.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "user/index.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "home/index.html.twig"));
 
         // line 1
         echo "
 <html>
-    <head>
-        <meta charset=\"utf-8\">
-        <title>Home</title>
-        <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">
-    </head>
-    <body>
-    ";
+<head>
+    <meta charset=\"utf-8\">
+    <title>Home</title>
+    <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">
+</head>
+<body>
+";
         // line 9
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) {
             // line 10
-            echo "        <div align=\"center\">
-            <br>
-            <p>It works !</p>
-            <a href=\"/logout\" class=\"btn btn-primary\">Log Out</a>
-            <br><br>
-            <a href=\"/adduser\" class=\"btn btn-primary\">Ajouter des utilisateurs</a>
-            <br><br>
-        </div>
-        <table class=\"table\">
-            <tr align=\"center\">
-                <td>ID</td>
-                <td>Nom</td>
-                <td>Prénom</td>
-                <td>Mail</td>
-                <td>Avatar</td>
-                <td>Date de naissance</td>
+            echo "    <div align=\"center\">
+        <br>
+        <a href=\"/logout\" class=\"btn btn-primary\">Se déconnecter</a>
+        <br><br>
+        ";
+            // line 14
+            if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
+                // line 15
+                echo "        <a href=\"/adduser\" class=\"btn btn-primary\">Ajouter des utilisateurs</a>
+        <br><br>
+        ";
+            }
+            // line 18
+            echo "    </div>
+    <table class=\"table\">
+        <tr align=\"center\">
+            ";
+            // line 21
+            if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
+                // line 22
+                echo "                <td>ID</td>
+            ";
+            }
+            // line 24
+            echo "            <td>Nom</td>
+            <td>Prénom</td>
+            <td>Mail</td>
+            <td>Avatar</td>
+            ";
+            // line 28
+            if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
+                // line 29
+                echo "                <td>Date de naissance</td>
                 <td>Date de création</td>
                 <td>Date de modification</td>
                 <td>Actions</td>
-            </tr>
+            ";
+            }
+            // line 34
+            echo "        </tr>
 
         ";
-            // line 31
+            // line 36
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable((isset($context["tab"]) || array_key_exists("tab", $context) ? $context["tab"] : (function () { throw new RuntimeError('Variable "tab" does not exist.', 31, $this->source); })()));
+            $context['_seq'] = twig_ensure_traversable((isset($context["tab"]) || array_key_exists("tab", $context) ? $context["tab"] : (function () { throw new RuntimeError('Variable "tab" does not exist.', 36, $this->source); })()));
             foreach ($context['_seq'] as $context["_key"] => $context["user"]) {
-                // line 32
+                // line 37
                 echo "            <tr align=\"center\">
-                <td>";
-                // line 33
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 33), "html", null, true);
-                echo "</td>
-                <td>";
-                // line 34
-                echo twig_escape_filter($this->env, twig_upper_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "nom", [], "any", false, false, false, 34)), "html", null, true);
-                echo "</td>
-                <td>";
-                // line 35
-                echo twig_escape_filter($this->env, twig_capitalize_string_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "prenom", [], "any", false, false, false, 35)), "html", null, true);
-                echo "</td>
-                <td>";
-                // line 36
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "email", [], "any", false, false, false, 36), "html", null, true);
-                echo "</td>
-                <td>
-                    <img src=\"";
+                ";
                 // line 38
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "avatar", [], "any", false, false, false, 38), "html", null, true);
-                echo "\" alt=\"avatar-";
-                echo twig_escape_filter($this->env, twig_upper_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "nom", [], "any", false, false, false, 38)), "html", null, true);
-                echo "-";
-                echo twig_escape_filter($this->env, twig_capitalize_string_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "prenom", [], "any", false, false, false, 38)), "html", null, true);
-                echo "\" width=\"40\">
-                </td>
-                <td>";
-                // line 40
-                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "datenaissance", [], "any", false, false, false, 40), "d/m/Y"), "html", null, true);
-                echo "</td>
-                <td>";
+                if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
+                    // line 39
+                    echo "                <td>";
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 39), "html", null, true);
+                    echo "</td>
+                ";
+                }
                 // line 41
-                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "datecreation", [], "any", false, false, false, 41), "d/m/Y"), "html", null, true);
+                echo "                <td>";
+                echo twig_escape_filter($this->env, twig_upper_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "nom", [], "any", false, false, false, 41)), "html", null, true);
                 echo "</td>
                 <td>";
                 // line 42
-                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "datemodif", [], "any", false, false, false, 42), "d/m/Y"), "html", null, true);
+                echo twig_escape_filter($this->env, twig_capitalize_string_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "prenom", [], "any", false, false, false, 42)), "html", null, true);
+                echo "</td>
+                <td>";
+                // line 43
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "email", [], "any", false, false, false, 43), "html", null, true);
                 echo "</td>
                 <td>
-                    <a href=\"/deluser?id=";
-                // line 44
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 44), "html", null, true);
-                echo "\" class=\"btn btn-primary\">Supprimer</a>
-                    <a href=\"/updateuser?id=";
+                    <img src=\"";
                 // line 45
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 45), "html", null, true);
-                echo "\" class=\"btn btn-primary\">Modifier</a>
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "avatar", [], "any", false, false, false, 45), "html", null, true);
+                echo "\" alt=\"avatar-";
+                echo twig_escape_filter($this->env, twig_upper_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "nom", [], "any", false, false, false, 45)), "html", null, true);
+                echo "-";
+                echo twig_escape_filter($this->env, twig_capitalize_string_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "prenom", [], "any", false, false, false, 45)), "html", null, true);
+                echo "\" width=\"40\">
                 </td>
-            </tr>
+                ";
+                // line 47
+                if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
+                    // line 48
+                    echo "                <td>";
+                    echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "datenaissance", [], "any", false, false, false, 48), "d/m/Y"), "html", null, true);
+                    echo "</td>
+                <td>";
+                    // line 49
+                    echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "datecreation", [], "any", false, false, false, 49), "d/m/Y"), "html", null, true);
+                    echo "</td>
+                <td>";
+                    // line 50
+                    echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "datemodif", [], "any", false, false, false, 50), "d/m/Y"), "html", null, true);
+                    echo "</td>
+                <td>
+                    <a href=\"/deluser?id=";
+                    // line 52
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 52), "html", null, true);
+                    echo "\" class=\"btn btn-primary\">Supprimer</a>
+                    <a href=\"/updateuser?id=";
+                    // line 53
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 53), "html", null, true);
+                    echo "\" class=\"btn btn-primary\">Modifier</a>
+                </td>
+                ";
+                }
+                // line 56
+                echo "            </tr>
         ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['user'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 49
-            echo "        </table>
-    ";
+            // line 58
+            echo "    </table>
+";
         } else {
-            // line 51
-            echo "        <script>window.location.href = '/login'</script>
-    ";
+            // line 60
+            echo "    <script>window.location.href = '/login'</script>
+";
         }
-        // line 53
-        echo "    </body>
+        // line 62
+        echo "</body>
 </html>";
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -153,7 +184,7 @@ class __TwigTemplate_6151cab574e50140cd81778352cbd3bee2dd54a0351d3775926c5b02c8e
 
     public function getTemplateName()
     {
-        return "user/index.html.twig";
+        return "home/index.html.twig";
     }
 
     public function isTraitable()
@@ -163,50 +194,58 @@ class __TwigTemplate_6151cab574e50140cd81778352cbd3bee2dd54a0351d3775926c5b02c8e
 
     public function getDebugInfo()
     {
-        return array (  144 => 53,  140 => 51,  136 => 49,  126 => 45,  122 => 44,  117 => 42,  113 => 41,  109 => 40,  100 => 38,  95 => 36,  91 => 35,  87 => 34,  83 => 33,  80 => 32,  76 => 31,  53 => 10,  51 => 9,  41 => 1,);
+        return array (  175 => 62,  171 => 60,  167 => 58,  160 => 56,  154 => 53,  150 => 52,  145 => 50,  141 => 49,  136 => 48,  134 => 47,  125 => 45,  120 => 43,  116 => 42,  111 => 41,  105 => 39,  103 => 38,  100 => 37,  96 => 36,  92 => 34,  85 => 29,  83 => 28,  77 => 24,  73 => 22,  71 => 21,  66 => 18,  61 => 15,  59 => 14,  53 => 10,  51 => 9,  41 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("
 <html>
-    <head>
-        <meta charset=\"utf-8\">
-        <title>Home</title>
-        <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">
-    </head>
-    <body>
-    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-        <div align=\"center\">
-            <br>
-            <p>It works !</p>
-            <a href=\"/logout\" class=\"btn btn-primary\">Log Out</a>
-            <br><br>
-            <a href=\"/adduser\" class=\"btn btn-primary\">Ajouter des utilisateurs</a>
-            <br><br>
-        </div>
-        <table class=\"table\">
-            <tr align=\"center\">
+<head>
+    <meta charset=\"utf-8\">
+    <title>Home</title>
+    <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">
+</head>
+<body>
+{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+    <div align=\"center\">
+        <br>
+        <a href=\"/logout\" class=\"btn btn-primary\">Se déconnecter</a>
+        <br><br>
+        {% if is_granted('ROLE_ADMIN') %}
+        <a href=\"/adduser\" class=\"btn btn-primary\">Ajouter des utilisateurs</a>
+        <br><br>
+        {% endif %}
+    </div>
+    <table class=\"table\">
+        <tr align=\"center\">
+            {% if is_granted('ROLE_ADMIN') %}
                 <td>ID</td>
-                <td>Nom</td>
-                <td>Prénom</td>
-                <td>Mail</td>
-                <td>Avatar</td>
+            {% endif %}
+            <td>Nom</td>
+            <td>Prénom</td>
+            <td>Mail</td>
+            <td>Avatar</td>
+            {% if is_granted('ROLE_ADMIN') %}
                 <td>Date de naissance</td>
                 <td>Date de création</td>
                 <td>Date de modification</td>
                 <td>Actions</td>
-            </tr>
+            {% endif %}
+        </tr>
 
         {% for user in tab %}
             <tr align=\"center\">
+                {% if is_granted('ROLE_ADMIN') %}
                 <td>{{ user.id }}</td>
+                {% endif %}
                 <td>{{ user.nom | upper }}</td>
                 <td>{{ user.prenom | capitalize  }}</td>
                 <td>{{ user.email }}</td>
                 <td>
                     <img src=\"{{ user.avatar }}\" alt=\"avatar-{{ user.nom | upper }}-{{ user.prenom | capitalize }}\" width=\"40\">
                 </td>
+                {% if is_granted('ROLE_ADMIN') %}
                 <td>{{ user.datenaissance | date('d/m/Y') }}</td>
                 <td>{{ user.datecreation | date('d/m/Y') }}</td>
                 <td>{{ user.datemodif | date('d/m/Y') }}</td>
@@ -214,13 +253,14 @@ class __TwigTemplate_6151cab574e50140cd81778352cbd3bee2dd54a0351d3775926c5b02c8e
                     <a href=\"/deluser?id={{ user.id }}\" class=\"btn btn-primary\">Supprimer</a>
                     <a href=\"/updateuser?id={{ user.id }}\" class=\"btn btn-primary\">Modifier</a>
                 </td>
+                {% endif %}
             </tr>
         {% endfor %}
-        </table>
-    {% else %}
-        <script>window.location.href = '/login'</script>
-    {% endif %}
-    </body>
-</html>", "user/index.html.twig", "C:\\laragon\\www\\auth\\templates\\user\\index.html.twig");
+    </table>
+{% else %}
+    <script>window.location.href = '/login'</script>
+{% endif %}
+</body>
+</html>", "home/index.html.twig", "C:\\laragon\\www\\auth\\templates\\home\\index.html.twig");
     }
 }

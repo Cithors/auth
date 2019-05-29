@@ -84,7 +84,7 @@ class __TwigTemplate_f46d8b75ccc48632987d0b0e1e69d0d56cb62e2898fb3e8880e2e821669
         echo "    ";
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) {
             // line 7
-            echo "        <script>window.location.href = '/user'</script>
+            echo "        <script>window.location.href = '/home'</script>
     ";
         } else {
             // line 9
@@ -166,7 +166,7 @@ class __TwigTemplate_f46d8b75ccc48632987d0b0e1e69d0d56cb62e2898fb3e8880e2e821669
 
 {% block body %}
     {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-        <script>window.location.href = '/user'</script>
+        <script>window.location.href = '/home'</script>
     {% else %}
         <form method=\"post\">
             {% if error %}

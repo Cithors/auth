@@ -11,7 +11,7 @@
                     '/updateuser',
                 ],
                 'name' => [
-                    'update.user',
+                    'update.home',
                 ],
             ],
         ],

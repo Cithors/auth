@@ -45,7 +45,7 @@ INSERT INTO `migration_versions` (`version`, `executed_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Table structure for table `home`
 --
 
 CREATE TABLE `user` (
@@ -62,7 +62,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `user`
+-- Dumping data for table `home`
 --
 
 INSERT INTO `user` (`id`, `email`, `roles`, `password`, `nom`, `prenom`, `date_naissance`, `date_creation`, `date_modif`, `avatar`) VALUES
@@ -81,7 +81,7 @@ ALTER TABLE `migration_versions`
   ADD PRIMARY KEY (`version`);
 
 --
--- Indexes for table `user`
+-- Indexes for table `home`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`),
@@ -92,7 +92,7 @@ ALTER TABLE `user`
 --
 
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT for table `home`
 --
 ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;

@@ -4,7 +4,7 @@
 
 {% block body %}
     {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-        <script>window.location.href = '/user'</script>
+        <script>window.location.href = '/home'</script>
     {% else %}
         <form method="post">
             {% if error %}
