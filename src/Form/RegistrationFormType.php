@@ -28,9 +28,9 @@ class RegistrationFormType extends AbstractType
                 'first_options'  => ['label' => 'Password'],
                 'second_options' => ['label' => 'Repeat Password'],
             ])
-            ->add('nom', TextType::class)
-            ->add('prenom', TextType::class)
-            ->add('datenaissance', DateType::class, [
+            ->add('lastname', TextType::class)
+            ->add('name', TextType::class)
+            ->add('birthday', DateType::class, [
                 // renders it as a single text box
                 'widget' => 'single_text',
             ])

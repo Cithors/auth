@@ -13,6 +13,7 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class UserController extends AbstractController{
+
     /**
      * @Route("/home", name="home")
      */
@@ -29,8 +30,7 @@ class UserController extends AbstractController{
         $id = dump($request->query->get('id'));
 
         $em = $this->getDoctrine()->getManager();
-        $user = $em->getRepository(User::class)->findBy(['id' => $id]);
-        $user = $user['0'];
+        $user = $em->getRepository(User::class)->findOneBy(['id' => $id]);
         $form = $this->createForm(UpdateFormType::class, $user);
         $form->handleRequest($request);
 
@@ -65,7 +65,7 @@ class UserController extends AbstractController{
      * @Route("/traitement/deluser",name="trait.deluser")
      */
     public function valide(Request $request){
-        $id = dump($request->query->get('id'));
+        $id = $request->query->get('id');
         $em = $this->getDoctrine()->getManager();
         $user = $em->getRepository(User::class)->findBy(['id' => $id]);
         $em->remove($user['0']);
@@ -88,7 +88,7 @@ class UserController extends AbstractController{
             $user->setPassword(
                 $passwordEncoder->encodePassword(
                     $user,
-                    $form->get('plainPassword')->getData()
+                    $form->get('password')->getData()
                 )
             );
 
@@ -98,7 +98,7 @@ class UserController extends AbstractController{
 
             // do anything else you need here, like send an email
 
-            return $this->redirectToRoute('user');
+            return $this->redirectToRoute('home');
         }
 
         return $this->render('home/adduser.html.twig', [

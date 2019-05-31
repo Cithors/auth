@@ -38,7 +38,7 @@ class __TwigTemplate_961f93d44b090265b3234dda579180f91575be0dae35060ce5fbb6952cd
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "home/deluser.html.twig"));
 
         // line 1
-        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATIED_FULLY")) {
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
             // line 2
             echo "<html>
     <head>
@@ -87,7 +87,7 @@ class __TwigTemplate_961f93d44b090265b3234dda579180f91575be0dae35060ce5fbb6952cd
 
     public function getSourceContext()
     {
-        return new Source("{% if is_granted('IS_AUTHENTICATIED_FULLY') %}
+        return new Source("{% if is_granted('ROLE_ADMIN') %}
 <html>
     <head>
         <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">

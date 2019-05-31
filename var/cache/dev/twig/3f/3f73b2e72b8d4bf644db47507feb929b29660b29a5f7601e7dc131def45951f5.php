@@ -109,11 +109,11 @@ class __TwigTemplate_6151cab574e50140cd81778352cbd3bee2dd54a0351d3775926c5b02c8e
                 }
                 // line 41
                 echo "                <td>";
-                echo twig_escape_filter($this->env, twig_upper_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "nom", [], "any", false, false, false, 41)), "html", null, true);
+                echo twig_escape_filter($this->env, twig_upper_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "lastname", [], "any", false, false, false, 41)), "html", null, true);
                 echo "</td>
                 <td>";
                 // line 42
-                echo twig_escape_filter($this->env, twig_capitalize_string_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "prenom", [], "any", false, false, false, 42)), "html", null, true);
+                echo twig_escape_filter($this->env, twig_capitalize_string_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "name", [], "any", false, false, false, 42)), "html", null, true);
                 echo "</td>
                 <td>";
                 // line 43
@@ -124,9 +124,9 @@ class __TwigTemplate_6151cab574e50140cd81778352cbd3bee2dd54a0351d3775926c5b02c8e
                 // line 45
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "avatar", [], "any", false, false, false, 45), "html", null, true);
                 echo "\" alt=\"avatar-";
-                echo twig_escape_filter($this->env, twig_upper_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "nom", [], "any", false, false, false, 45)), "html", null, true);
+                echo twig_escape_filter($this->env, twig_upper_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "lastname", [], "any", false, false, false, 45)), "html", null, true);
                 echo "-";
-                echo twig_escape_filter($this->env, twig_capitalize_string_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "prenom", [], "any", false, false, false, 45)), "html", null, true);
+                echo twig_escape_filter($this->env, twig_capitalize_string_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "name", [], "any", false, false, false, 45)), "html", null, true);
                 echo "\" width=\"40\">
                 </td>
                 ";
@@ -134,44 +134,49 @@ class __TwigTemplate_6151cab574e50140cd81778352cbd3bee2dd54a0351d3775926c5b02c8e
                 if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
                     // line 48
                     echo "                <td>";
-                    echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "datenaissance", [], "any", false, false, false, 48), "d/m/Y"), "html", null, true);
+                    echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "birthday", [], "any", false, false, false, 48), "d/m/Y"), "html", null, true);
                     echo "</td>
                 <td>";
                     // line 49
-                    echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "datecreation", [], "any", false, false, false, 49), "d/m/Y"), "html", null, true);
+                    echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "createdat", [], "any", false, false, false, 49), "d/m/Y"), "html", null, true);
                     echo "</td>
                 <td>";
                     // line 50
-                    echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "datemodif", [], "any", false, false, false, 50), "d/m/Y"), "html", null, true);
+                    echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "updatedat", [], "any", false, false, false, 50), "d/m/Y"), "html", null, true);
                     echo "</td>
                 <td>
-                    <a href=\"/deluser?id=";
+                    ";
                     // line 52
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 52), "html", null, true);
-                    echo "\" class=\"btn btn-primary\">Supprimer</a>
-                    <a href=\"/updateuser?id=";
-                    // line 53
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 53), "html", null, true);
+                    if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["user"], "roles", [], "any", false, false, false, 52), "0", [], "array", false, false, false, 52) != "ROLE_ADMIN")) {
+                        // line 53
+                        echo "                        <a href=\"/deluser?id=";
+                        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 53), "html", null, true);
+                        echo "\" class=\"btn btn-primary\">Supprimer</a>
+                    ";
+                    }
+                    // line 55
+                    echo "                    <a href=\"/updateuser?id=";
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 55), "html", null, true);
                     echo "\" class=\"btn btn-primary\">Modifier</a>
                 </td>
                 ";
                 }
-                // line 56
+                // line 58
                 echo "            </tr>
         ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['user'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 58
+            // line 60
             echo "    </table>
 ";
         } else {
-            // line 60
+            // line 62
             echo "    <script>window.location.href = '/login'</script>
 ";
         }
-        // line 62
+        // line 64
         echo "</body>
 </html>";
         
@@ -194,7 +199,7 @@ class __TwigTemplate_6151cab574e50140cd81778352cbd3bee2dd54a0351d3775926c5b02c8e
 
     public function getDebugInfo()
     {
-        return array (  175 => 62,  171 => 60,  167 => 58,  160 => 56,  154 => 53,  150 => 52,  145 => 50,  141 => 49,  136 => 48,  134 => 47,  125 => 45,  120 => 43,  116 => 42,  111 => 41,  105 => 39,  103 => 38,  100 => 37,  96 => 36,  92 => 34,  85 => 29,  83 => 28,  77 => 24,  73 => 22,  71 => 21,  66 => 18,  61 => 15,  59 => 14,  53 => 10,  51 => 9,  41 => 1,);
+        return array (  180 => 64,  176 => 62,  172 => 60,  165 => 58,  158 => 55,  152 => 53,  150 => 52,  145 => 50,  141 => 49,  136 => 48,  134 => 47,  125 => 45,  120 => 43,  116 => 42,  111 => 41,  105 => 39,  103 => 38,  100 => 37,  96 => 36,  92 => 34,  85 => 29,  83 => 28,  77 => 24,  73 => 22,  71 => 21,  66 => 18,  61 => 15,  59 => 14,  53 => 10,  51 => 9,  41 => 1,);
     }
 
     public function getSourceContext()
@@ -239,18 +244,20 @@ class __TwigTemplate_6151cab574e50140cd81778352cbd3bee2dd54a0351d3775926c5b02c8e
                 {% if is_granted('ROLE_ADMIN') %}
                 <td>{{ user.id }}</td>
                 {% endif %}
-                <td>{{ user.nom | upper }}</td>
-                <td>{{ user.prenom | capitalize  }}</td>
+                <td>{{ user.lastname | upper }}</td>
+                <td>{{ user.name | capitalize  }}</td>
                 <td>{{ user.email }}</td>
                 <td>
-                    <img src=\"{{ user.avatar }}\" alt=\"avatar-{{ user.nom | upper }}-{{ user.prenom | capitalize }}\" width=\"40\">
+                    <img src=\"{{ user.avatar }}\" alt=\"avatar-{{ user.lastname | upper }}-{{ user.name | capitalize }}\" width=\"40\">
                 </td>
                 {% if is_granted('ROLE_ADMIN') %}
-                <td>{{ user.datenaissance | date('d/m/Y') }}</td>
-                <td>{{ user.datecreation | date('d/m/Y') }}</td>
-                <td>{{ user.datemodif | date('d/m/Y') }}</td>
+                <td>{{ user.birthday | date('d/m/Y') }}</td>
+                <td>{{ user.createdat | date('d/m/Y') }}</td>
+                <td>{{ user.updatedat | date('d/m/Y') }}</td>
                 <td>
-                    <a href=\"/deluser?id={{ user.id }}\" class=\"btn btn-primary\">Supprimer</a>
+                    {% if user.roles['0'] != 'ROLE_ADMIN' %}
+                        <a href=\"/deluser?id={{ user.id }}\" class=\"btn btn-primary\">Supprimer</a>
+                    {% endif %}
                     <a href=\"/updateuser?id={{ user.id }}\" class=\"btn btn-primary\">Modifier</a>
                 </td>
                 {% endif %}

@@ -10,20 +10,18 @@ use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Validator\Constraints\NotBlank;
-use Symfony\Component\Validator\Constraints\Length;
 
 class UpdateFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nom',TextType::class)
-            ->add('prenom',TextType::class)
+            ->add('lastname',TextType::class)
+            ->add('name',TextType::class)
             ->add('password', PasswordType::class)
             ->add('email', EmailType::class)
             ->add('avatar',TextType::class)
-            ->add('datenaissance', DateType::class, [
+            ->add('birthday', DateType::class, [
                 // renders it as a single text box
                 'widget' => 'single_text',
             ])

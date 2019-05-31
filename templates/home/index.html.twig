@@ -38,18 +38,20 @@
                 {% if is_granted('ROLE_ADMIN') %}
                 <td>{{ user.id }}</td>
                 {% endif %}
-                <td>{{ user.nom | upper }}</td>
-                <td>{{ user.prenom | capitalize  }}</td>
+                <td>{{ user.lastname | upper }}</td>
+                <td>{{ user.name | capitalize  }}</td>
                 <td>{{ user.email }}</td>
                 <td>
-                    <img src="{{ user.avatar }}" alt="avatar-{{ user.nom | upper }}-{{ user.prenom | capitalize }}" width="40">
+                    <img src="{{ user.avatar }}" alt="avatar-{{ user.lastname | upper }}-{{ user.name | capitalize }}" width="40">
                 </td>
                 {% if is_granted('ROLE_ADMIN') %}
-                <td>{{ user.datenaissance | date('d/m/Y') }}</td>
-                <td>{{ user.datecreation | date('d/m/Y') }}</td>
-                <td>{{ user.datemodif | date('d/m/Y') }}</td>
+                <td>{{ user.birthday | date('d/m/Y') }}</td>
+                <td>{{ user.createdat | date('d/m/Y') }}</td>
+                <td>{{ user.updatedat | date('d/m/Y') }}</td>
                 <td>
-                    <a href="/deluser?id={{ user.id }}" class="btn btn-primary">Supprimer</a>
+                    {% if user.roles['0'] != 'ROLE_ADMIN' %}
+                        <a href="/deluser?id={{ user.id }}" class="btn btn-primary">Supprimer</a>
+                    {% endif %}
                     <a href="/updateuser?id={{ user.id }}" class="btn btn-primary">Modifier</a>
                 </td>
                 {% endif %}

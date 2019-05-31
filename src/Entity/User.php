@@ -55,7 +55,7 @@ class User implements UserInterface
      *     message="Ton nom doit etre en minnuscule et sans chiffre ou caractère spécial"
      * )
      */
-    private $nom;
+    private $lastname;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -65,34 +65,27 @@ class User implements UserInterface
      *     message="Ton prenom doit etre en minnuscule et sans chiffre ou caractère spécial"
      * )
      */
-    private $prenom;
+    private $name;
 
     /**
      * @ORM\Column(type="date")
      */
-    private $date_naissance;
-
-    /**
-     * @ORM\Column(type="date")
-     */
-    private $date_creation;
-
-    /**
-     * @ORM\Column(type="date")
-     */
-    private $date_modif;
+    private $birthday;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
     private $avatar;
-/*
+
     /**
-     * @SecurityAssert\UserPassword(
-     *     message = "Wrong value for your current password"
-     * )
+     * @ORM\Column(type="date")
      */
-    //protected $oldPassword;
+    private $created_at;
+
+    /**
+     * @ORM\Column(type="date")
+     */
+    private $updated_at;
 
     public function getId(): ?int
     {
@@ -172,62 +165,62 @@ class User implements UserInterface
         // $this->plainPassword = null;
     }
 
-    public function getNom(): ?string
+    public function getLastname(): ?string
     {
-        return $this->nom;
+        return $this->lastname;
     }
 
-    public function setNom(string $nom): self
+    public function setLastname(string $lastname): self
     {
-        $this->nom = $nom;
+        $this->lastname = $lastname;
 
         return $this;
     }
 
-    public function getPrenom(): ?string
+    public function getName(): ?string
     {
-        return $this->prenom;
+        return $this->name;
     }
 
-    public function setPrenom(string $prenom): self
+    public function setName(string $name): self
     {
-        $this->prenom = $prenom;
+        $this->name = $name;
 
         return $this;
     }
 
-    public function getDateNaissance(): ?\DateTimeInterface
+    public function getBirthday(): ?\DateTimeInterface
     {
-        return $this->date_naissance;
+        return $this->birthday;
     }
 
-    public function setDateNaissance(\DateTimeInterface $date_naissance): self
+    public function setBirthday(\DateTimeInterface $birthday): self
     {
-        $this->date_naissance = $date_naissance;
+        $this->birthday = $birthday;
 
         return $this;
     }
 
-    public function getDateCreation(): ?\DateTimeInterface
+    public function getCreateDate(): ?\DateTimeInterface
     {
-        return $this->date_creation;
+        return $this->createDate;
     }
 
-    public function setDateCreation($date_creation): self
+    public function setCreateDate($createDate): self
     {
-        $this->date_creation = $date_creation;
+        $this->createDate = $createDate;
 
         return $this;
     }
 
-    public function getDateModif(): ?\DateTimeInterface
+    public function getModifDate(): ?\DateTimeInterface
     {
-        return $this->date_modif;
+        return $this->modifDate;
     }
 
-    public function setDateModif($date_modif): self
+    public function setModifDate($modifDate): self
     {
-        $this->date_modif = $date_modif;
+        $this->modifDate = $modifDate;
 
         return $this;
     }
@@ -244,20 +237,33 @@ class User implements UserInterface
         return $this;
     }
 
-    /*public function getoldPassword(): string
-    {
-        return (string) $this->oldPassword;
-    }
-
-    public function setoldPassword(string $oldPassword): self
-    {
-        $this->password = $oldPassword;
-
-        return $this;
-    }*/
     public function __construct()
     {
-        $this->date_creation = new \Datetime("today");
-        $this->date_modif = new \Datetime("today");
+        $this->created_at = new \Datetime("today");
+        $this->updated_at = new \Datetime("today");
+    }
+
+    public function getCreatedAt(): ?\DateTimeInterface
+    {
+        return $this->created_at;
+    }
+
+    public function setCreatedAt(\DateTimeInterface $created_at): self
+    {
+        $this->created_at = $created_at;
+
+        return $this;
+    }
+
+    public function getUpdatedAt(): ?\DateTimeInterface
+    {
+        return $this->updated_at;
+    }
+
+    public function setUpdatedAt(\DateTimeInterface $updated_at): self
+    {
+        $this->updated_at = $updated_at;
+
+        return $this;
     }
 }
