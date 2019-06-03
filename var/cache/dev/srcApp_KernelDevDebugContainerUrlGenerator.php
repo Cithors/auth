@@ -32,6 +32,13 @@ class srcApp_KernelDevDebugContainerUrlGenerator extends Symfony\Component\Routi
         '_profiler_router' => [['token'], ['_controller' => 'web_profiler.controller.router::panelAction'], [], [['text', '/router'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
         '_profiler_exception' => [['token'], ['_controller' => 'web_profiler.controller.exception::showAction'], [], [['text', '/exception'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
         '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception::cssAction'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
+        'app_del_missing' => [[], ['_controller' => 'App\\Controller\\MissingListController::del'], [], [['text', '/annuler']], [], []],
+        'trait.delabs' => [[], ['_controller' => 'App\\Controller\\MissingListController::validedel'], [], [['text', '/traitement/delabs']], [], []],
+        'app_add_missing' => [[], ['_controller' => 'App\\Controller\\MissingListController::addmissing'], [], [['text', '/valider']], [], []],
+        'trait.addabs' => [[], ['_controller' => 'App\\Controller\\MissingListController::valideadd'], [], [['text', '/traitement/addabs']], [], []],
+        'app_nope_missing' => [[], ['_controller' => 'App\\Controller\\MissingListController::nomissing'], [], [['text', '/refuser']], [], []],
+        'trait.noabs' => [[], ['_controller' => 'App\\Controller\\MissingListController::valideno'], [], [['text', '/traitement/noabs']], [], []],
+        'app_askabs' => [[], ['_controller' => 'App\\Controller\\MissingListController::askabs'], [], [['text', '/askabs']], [], []],
         'home' => [[], ['_controller' => 'App\\Controller\\UserController::main'], [], [['text', '/home']], [], []],
         'update.home' => [[], ['_controller' => 'App\\Controller\\UserController::up'], [], [['text', '/updateuser']], [], []],
         'deluser' => [[], ['_controller' => 'App\\Controller\\UserController::del'], [], [['text', '/deluser']], [], []],
@@ -40,6 +47,7 @@ class srcApp_KernelDevDebugContainerUrlGenerator extends Symfony\Component\Routi
         'app_register' => [[], ['_controller' => 'App\\Controller\\UserController::register'], [], [['text', '/register']], [], []],
         'app_login' => [[], ['_controller' => 'App\\Controller\\UserController::login'], [], [['text', '/login']], [], []],
         'app_logout' => [[], ['_controller' => 'App\\Controller\\UserController::logout'], [], [['text', '/logout']], [], []],
+        'app_absences' => [[], ['_controller' => 'App\\Controller\\UserController::abs'], [], [['text', '/absences']], [], []],
         'homepage' => [[], ['path' => '/login', 'permanent' => true, '_controller' => 'Symfony\\Bundle\\FrameworkBundle\\Controller\\RedirectController::urlRedirectAction'], [], [['text', '/']], [], []],
     ];
         }

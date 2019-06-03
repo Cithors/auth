@@ -11,10 +11,11 @@
         <br>
         <a href="/logout" class="btn btn-primary">Se déconnecter</a>
         <br><br>
+        <a href="/absences" class="btn btn-primary">Vérifier les absences</a>
         {% if is_granted('ROLE_ADMIN') %}
-        <a href="/adduser" class="btn btn-primary">Ajouter des utilisateurs</a>
-        <br><br>
+            <a href="/adduser" class="btn btn-primary">Ajouter des utilisateurs</a>
         {% endif %}
+        <br><br>
     </div>
     <table class="table">
         <tr align="center">
@@ -25,6 +26,7 @@
             <td>Prénom</td>
             <td>Mail</td>
             <td>Avatar</td>
+            <td>Viennoiserie Favorite</td>
             {% if is_granted('ROLE_ADMIN') %}
                 <td>Date de naissance</td>
                 <td>Date de création</td>
@@ -44,6 +46,11 @@
                 <td>
                     <img src="{{ user.avatar }}" alt="avatar-{{ user.lastname | upper }}-{{ user.name | capitalize }}" width="40">
                 </td>
+                {% for pastrie in pastries %}
+                    {% if pastrie.id == user.idpastries %}
+                        <td>{{ pastrie.name | capitalize }}</td>
+                    {% endif %}
+                {% endfor %}
                 {% if is_granted('ROLE_ADMIN') %}
                 <td>{{ user.birthday | date('d/m/Y') }}</td>
                 <td>{{ user.createdat | date('d/m/Y') }}</td>

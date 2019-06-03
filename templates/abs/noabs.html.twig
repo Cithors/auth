@@ -1,0 +1,17 @@
+{% if is_granted('ROLE_ADMIN') %}
+    <html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <meta charset="utf-8">
+    </head>
+    <body>
+    <div align="center">
+        <h1>Voulez-vous vraiment refuser le congé ?</h1>
+        <a href="/traitement/noabs?id={{ id }}" class="btn btn-primary">Oui</a>
+        <a href="/absences" class="btn btn-primary">Annuler</a>
+    </div>
+    </body>
+    </html>
+{% else %}
+    <script>window.location.href = '/login'</script>
+{% endif %}

@@ -2,6 +2,9 @@
 
 namespace App\Controller;
 
+use App\Entity\Pastries;
+use App\Entity\Missing;
+use App\Entity\MissingList;
 use App\Form\RegistrationFormType;
 use App\Form\UpdateFormType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -20,7 +23,9 @@ class UserController extends AbstractController{
     public function main(){
         $liste = $this->getDoctrine()->getManager();
         $tab = $liste->getRepository(User::class)->findAll();
-        return $this->render('home/index.html.twig', ['tab'=>$tab]);
+        $viennoiserie = $this->getDoctrine()->getManager();
+        $pastries = $viennoiserie->getRepository(Pastries::class)->findAll();
+        return $this->render('home/index.html.twig', ['tab'=>$tab,'pastries'=>$pastries]);
     }
 
     /**
@@ -158,5 +163,20 @@ class UserController extends AbstractController{
     {
         // controller can be blank: it will never be executed!
         throw new \Exception('Don\'t forget to activate logout in security.yaml');
+    }
+
+    /**
+     * @Route("/absences",name="app_absences")
+     */
+
+    public function abs(){
+        $list = $this->getDoctrine()->getManager();
+        $user = $list->getRepository(User::class)->findAll();
+        $missing = $this->getDoctrine()->getManager();
+        $missings = $missing->getRepository(Missing::class)->findAll();
+        $tab = $this->getDoctrine()->getManager();
+        $missingl = $tab->getRepository(MissingList::class)->findAll();
+
+        return $this->render('abs/index.html.twig', ['user'=>$user,'missing'=>$missings,'list'=>$missingl]);
     }
 }

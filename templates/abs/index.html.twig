@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Gestion des absences</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+        <div align="center">
+            <br>
+            <a href="/logout" class="btn btn-primary">Se déconnecter</a>
+            <br><br>
+            <a href="/home" class="btn btn-primary">Retour liste employé(e)s</a>
+            <a href="/askabs" class="btn btn-primary">Demander un congé</a>
+           <br><br>
+        </div>
+        <table class="table">
+            <tr>
+                <td>#</td>
+                <td>Nom</td>
+                <td>Prénom</td>
+                <td>Date de départ</td>
+                <td>Date de fin</td>
+                <td>Nature</td>
+                <td>Statut</td>
+                {% if is_granted('ROLE_ADMIN') %}
+                <td>Action</td>
+                {% endif %}
+            </tr>
+            {% for tab in list %}
+            <tr>
+                <td>{{ tab.id }}</td>
+                {% for tab2 in user %}
+                    {% if tab2.id == tab.iduser %}
+                        <td>{{ tab2.lastname | capitalize }}</td>
+                        <td>{{ tab2.name | capitalize }}</td>
+                    {% endif %}
+                {% endfor %}
+                <td>{{ tab.start | date('d/m/Y') }}</td>
+                <td>{{ tab.end | date('d/m/Y') }}</td>
+                {% for tab3 in missing %}
+                    {% if tab3.id == tab.idmissing %}
+                        <td>{{ tab3.name | capitalize }}</td>
+                    {% endif %}
+                {% endfor %}
+                <td>{{ tab.status | upper }}</td>
+                {% if is_granted('ROLE_ADMIN') %}
+                <td>
+                    {% if tab.status == 'validé' %}
+                        <a href="/annuler?id={{ tab.id }}" class="btn btn-primary">Annuler</a>
+                    {% endif %}
+                    {% if tab.status == 'annulé' %}
+                        <a href="/valider?id={{ tab.id }}" class="btn btn-primary">Re-valider</a>
+                    {% endif %}
+                    {% if tab.status == 'en attente' %}
+                        <a href="/valider?id={{ tab.id }}" class="btn btn-primary">Valider</a>
+                        <a href="/refuser?id={{ tab.id }}" class="btn btn-primary">Refuser</a>
+                    {% endif %}
+                    {% if tab.status == 'refusé' %}
+                        <a href="/valider?id={{ tab.id }}" class="btn btn-primary">Valider</a>
+                    {% endif %}
+                </td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>

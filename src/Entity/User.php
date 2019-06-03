@@ -87,6 +87,11 @@ class User implements UserInterface
      */
     private $updated_at;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $id_pastries;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -263,6 +268,18 @@ class User implements UserInterface
     public function setUpdatedAt(\DateTimeInterface $updated_at): self
     {
         $this->updated_at = $updated_at;
+
+        return $this;
+    }
+
+    public function getIdPastries(): ?int
+    {
+        return $this->id_pastries;
+    }
+
+    public function setIdPastries(int $id_pastries): self
+    {
+        $this->id_pastries = $id_pastries;
 
         return $this;
     }

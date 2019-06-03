@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
@@ -35,6 +36,15 @@ class RegistrationFormType extends AbstractType
                 'widget' => 'single_text',
             ])
             ->add('avatar',TextType::class)
+            ->add('id_pastries',ChoiceType::class,
+                [
+                    'choices'=>[
+                        'Croissant' => '1',
+                        'Pain au chocolat' => '2',
+                        'Pain au raisin' => '3',
+                        'Chausson aux pommes' => '4',
+                    ]
+                ])
         ;
     }
 
