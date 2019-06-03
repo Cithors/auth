@@ -16,6 +16,6 @@ if (!\class_exists(srcApp_KernelDevDebugContainer::class, false)) {
 
 return new \ContainerCorF2NC\srcApp_KernelDevDebugContainer([
     'container.build_hash' => 'CorF2NC',
-    'container.build_id' => '6c79c9c9',
-    'container.build_time' => 1559555892,
+    'container.build_id' => 'fb788fe8',
+    'container.build_time' => 1559562226,
 ], __DIR__.\DIRECTORY_SEPARATOR.'ContainerCorF2NC');

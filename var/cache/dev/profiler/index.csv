@@ -600,3 +600,7 @@ a8d533,127.0.0.1,GET,http://auth.test/traitement/delabs?id=3,1559556003,,302
 e121d0,127.0.0.1,GET,http://auth.test/absences,1559556027,,200
 7943f1,127.0.0.1,GET,http://auth.test/absences,1559556055,,200
 089d36,127.0.0.1,GET,http://auth.test/askabs,1559556144,,200
+399aca,127.0.0.1,GET,http://auth.test/home,1559561402,,200
+55ca99,127.0.0.1,GET,http://auth.test/absences,1559561407,,200
+854e95,127.0.0.1,GET,http://auth.test/home,1559561643,,200
+e760b2,127.0.0.1,GET,http://auth.test/absences,1559562227,,200

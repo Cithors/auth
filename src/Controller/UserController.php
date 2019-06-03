@@ -23,8 +23,8 @@ class UserController extends AbstractController{
     public function main(){
         $liste = $this->getDoctrine()->getManager();
         $tab = $liste->getRepository(User::class)->findAll();
-        $viennoiserie = $this->getDoctrine()->getManager();
-        $pastries = $viennoiserie->getRepository(Pastries::class)->findAll();
+        $pastry = $this->getDoctrine()->getManager();
+        $pastries = $pastry->getRepository(Pastries::class)->findAll();
         return $this->render('home/index.html.twig', ['tab'=>$tab,'pastries'=>$pastries]);
     }
 
