@@ -604,3 +604,7 @@ e121d0,127.0.0.1,GET,http://auth.test/absences,1559556027,,200
 55ca99,127.0.0.1,GET,http://auth.test/absences,1559561407,,200
 854e95,127.0.0.1,GET,http://auth.test/home,1559561643,,200
 e760b2,127.0.0.1,GET,http://auth.test/absences,1559562227,,200
+8fb5e7,127.0.0.1,GET,http://auth.test/askabs,1559564302,,200
+96d8c2,127.0.0.1,GET,http://auth.test/home,1559564306,,200
+4d9f04,127.0.0.1,GET,http://auth.test/home,1559566111,,200
+c20b15,127.0.0.1,GET,http://auth.test/absences,1559566114,,200

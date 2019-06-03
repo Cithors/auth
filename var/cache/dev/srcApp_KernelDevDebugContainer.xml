@@ -435,7 +435,7 @@
     <service id="App\Form\UpdateFormType" class="App\Form\UpdateFormType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
-    <service id="App\Repository\IdMissingRepository" class="App\Repository\IdMissingRepository" autowire="true" autoconfigure="true">
+    <service id="App\Repository\BreakfastRepository" class="App\Repository\BreakfastRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -2019,6 +2019,14 @@
         <argument>2048</argument>
       </call>
       <call method="addListener">
+        <argument>console.command</argument>
+        <argument type="collection">
+          <argument type="service" id="debug.debug_handlers_listener"/>
+          <argument>configure</argument>
+        </argument>
+        <argument>2048</argument>
+      </call>
+      <call method="addListener">
         <argument>kernel.request</argument>
         <argument type="collection">
           <argument type="service" id="router_listener"/>
@@ -2819,7 +2827,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory" public="false">
-      <argument type="service" id=".service_locator.E66K0cf"/>
+      <argument type="service" id=".service_locator.ssGGDnT"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -4473,8 +4481,8 @@
     <service id=".abstract.instanceof.App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\UpdateFormType" class="App\Form\UpdateFormType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\UpdateFormType" class="App\Form\UpdateFormType" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\IdMissingRepository" class="App\Repository\IdMissingRepository" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Repository\IdMissingRepository" class="App\Repository\IdMissingRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\BreakfastRepository" class="App\Repository\BreakfastRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\BreakfastRepository" class="App\Repository\BreakfastRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\MissingListRepository" class="App\Repository\MissingListRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\MissingListRepository" class="App\Repository\MissingListRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\MissingRepository" class="App\Repository\MissingRepository" autowire="true" abstract="true"/>
@@ -4764,10 +4772,10 @@
         <argument key="doctrine.orm.default_listeners.attach_entity_listeners" type="service" id="doctrine.orm.default_listeners.attach_entity_listeners"/>
       </argument>
     </service>
-    <service id=".service_locator.E66K0cf" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.ssGGDnT" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="App\Repository\IdMissingRepository" type="service" id="App\Repository\IdMissingRepository"/>
+        <argument key="App\Repository\BreakfastRepository" type="service" id="App\Repository\BreakfastRepository"/>
         <argument key="App\Repository\MissingListRepository" type="service" id="App\Repository\MissingListRepository"/>
         <argument key="App\Repository\MissingRepository" type="service" id="App\Repository\MissingRepository"/>
         <argument key="App\Repository\PastriesRepository" type="service" id="App\Repository\PastriesRepository"/>
