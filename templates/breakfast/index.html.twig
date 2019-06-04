@@ -1,0 +1,69 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Gestion des petit déj</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<div align="center">
+    <br>
+    <a href="/logout" class="btn btn-primary">Se déconnecter</a>
+    <br><br>
+    <a href="/home" class="btn btn-primary">Retour liste employé(e)s</a>
+    <a href="/absences" class="btn btn-primary">Retour liste congés</a>
+    <br><br>
+</div>
+<div style="width: 85%; margin: auto; float: left;">
+    <table class="table">
+        <tr>
+            <td colspan="4" align="center">Liste des petits déj</td>
+        </tr>
+        <tr>
+            <td>#</td>
+            <td>Nom</td>
+            <td>Prénom</td>
+            <td>Date</td>
+        </tr>
+        {% for tab in breakfast1 %}
+            <tr>
+                <td>{{ tab.id }}</td>
+                {% for tab2 in user %}
+                    {% if tab2.id == tab.iduser %}
+                        <td>{{ tab2.lastname | upper }}</td>
+                        <td>{{ tab2.name | capitalize }}</td>
+                    {% endif %}
+                {% endfor %}
+                <td>{{ tab.date | date('d/m/Y') }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+<div style="width: 20%px; margin: auto; float: right;">
+    <table class="table">
+        <tr>
+            <td colspan="3" align="center">
+                Score
+            </td>
+        </tr>
+        <tr align="center">
+            <td>#</td>
+            <td colspan="2">Par</td>
+        </tr>
+        {% for tab in breakfast2 %}
+            <tr>
+                <td>{{ tab.count }}</td>
+                {% for tab2 in user %}
+                    {% if tab2.id == tab.id_user %}
+                        <td>{{ tab2.lastname | upper }}</td>
+                        <td>{{ tab2.name | capitalize }}</td>
+                    {% endif %}
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+
+</body>
+</html>
+
+<!-- TODO: afficher action pour breakfast !-->
