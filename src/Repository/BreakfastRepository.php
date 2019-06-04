@@ -42,9 +42,8 @@ class BreakfastRepository extends ServiceEntityRepository
         return $db = $this->createQueryBuilder('breakfast');
         $db
             ->addSelect('COUNT(*) as count')
-            ->groupBy('breakfast.id_user')
-            ->setFirstResult(0)
-            ->setMaxResults(30);
+            ->addSelect('id_user')
+            ->groupBy('breakfast.id_user');
         $result = $db->getQuery()->getResult();
     }
     */

@@ -22,6 +22,7 @@ class BreakfastController extends AbstractController
         $breakfast = $this->getDoctrine()->getManager();
         $breakfastlist = $breakfast->getRepository(Breakfast::class)->findAll();
         $breakfastscore = $this->count();
+
         return $this->render("breakfast/index.html.twig", ['user'=>$user,'breakfast1'=>$breakfastlist, 'breakfast2'=>$breakfastscore]);
     }
 

@@ -16,6 +16,6 @@ if (!\class_exists(srcApp_KernelDevDebugContainer::class, false)) {
 
 return new \ContainerXVoBUfT\srcApp_KernelDevDebugContainer([
     'container.build_hash' => 'XVoBUfT',
-    'container.build_id' => '154ad9e0',
-    'container.build_time' => 1559641710,
+    'container.build_id' => '3c879bb0',
+    'container.build_time' => 1559654337,
 ], __DIR__.\DIRECTORY_SEPARATOR.'ContainerXVoBUfT');
