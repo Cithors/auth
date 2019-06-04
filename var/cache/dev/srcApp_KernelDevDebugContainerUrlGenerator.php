@@ -33,6 +33,7 @@ class srcApp_KernelDevDebugContainerUrlGenerator extends Symfony\Component\Routi
         '_profiler_exception' => [['token'], ['_controller' => 'web_profiler.controller.exception::showAction'], [], [['text', '/exception'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
         '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception::cssAction'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
         'app_breakfast' => [[], ['_controller' => 'App\\Controller\\BreakfastController::show'], [], [['text', '/breakfast']], [], []],
+        'app_breakfast_list' => [[], ['_controller' => 'App\\Controller\\BreakfastController::listbreakfast'], [], [['text', '/breakfast/list']], [], []],
         'app_del_missing' => [[], ['_controller' => 'App\\Controller\\MissingListController::del'], [], [['text', '/annuler']], [], []],
         'trait.delabs' => [[], ['_controller' => 'App\\Controller\\MissingListController::validedel'], [], [['text', '/traitement/delabs']], [], []],
         'app_add_missing' => [[], ['_controller' => 'App\\Controller\\MissingListController::addmissing'], [], [['text', '/valider']], [], []],
