@@ -24,6 +24,7 @@
       <parameter key="WebServerBundle">Symfony\Bundle\WebServerBundle\WebServerBundle</parameter>
       <parameter key="StofDoctrineExtensionsBundle">Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle</parameter>
       <parameter key="DoctrineFixturesBundle">Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle</parameter>
+      <parameter key="CalendarBundle">CalendarBundle\CalendarBundle</parameter>
     </parameter>
     <parameter key="kernel.bundles_metadata" type="collection">
       <parameter key="FrameworkBundle" type="collection">
@@ -85,6 +86,10 @@
       <parameter key="DoctrineFixturesBundle" type="collection">
         <parameter key="path">C:\laragon\www\auth\vendor\doctrine\doctrine-fixtures-bundle</parameter>
         <parameter key="namespace">Doctrine\Bundle\FixturesBundle</parameter>
+      </parameter>
+      <parameter key="CalendarBundle" type="collection">
+        <parameter key="path">C:\laragon\www\auth\vendor\tattali\calendar-bundle\src</parameter>
+        <parameter key="namespace">CalendarBundle</parameter>
       </parameter>
     </parameter>
     <parameter key="kernel.charset">UTF-8</parameter>
@@ -432,6 +437,9 @@
     <service id="App\DataFixtures\AppFixtures" class="App\DataFixtures\AppFixtures" autowire="true" autoconfigure="true">
       <tag name="doctrine.fixture.orm"/>
       <argument type="service" id="security.user_password_encoder.generic"/>
+    </service>
+    <service id="App\EventListener\CalendarListener" class="App\EventListener\CalendarListener" autowire="true" autoconfigure="true">
+      <tag name="kernel.event_listener" event="calendar.set_data" method="load"/>
     </service>
     <service id="App\Form\AbsFormType" class="App\Form\AbsFormType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
@@ -1858,6 +1866,14 @@
       <argument type="service" id="debug.stopwatch"/>
       <argument type="service" id="monolog.logger.event" on-invalid="null"/>
       <call method="addListener">
+        <argument>calendar.set_data</argument>
+        <argument type="collection">
+          <argument type="service" id="App\EventListener\CalendarListener"/>
+          <argument>load</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListener">
         <argument>kernel.exception</argument>
         <argument type="collection">
           <argument type="service" id="http_exception_listener"/>
@@ -2950,6 +2966,7 @@
       <call method="setEntityNamespaces">
         <argument type="collection">
           <argument key="App">App\Entity</argument>
+          <argument key="CalendarBundle">CalendarBundle\Entity</argument>
         </argument>
       </call>
       <call method="setMetadataCacheImpl">
@@ -2996,12 +3013,17 @@
       <argument type="service" id="annotations.cached_reader"/>
       <argument type="collection">
         <argument>C:\laragon\www\auth\src\Entity</argument>
+        <argument>C:\laragon\www\auth\vendor\tattali\calendar-bundle\src\Entity</argument>
       </argument>
     </service>
     <service id="doctrine.orm.default_metadata_driver" class="Doctrine\Common\Persistence\Mapping\Driver\MappingDriverChain" public="false">
       <call method="addDriver">
         <argument type="service" id="doctrine.orm.default_annotation_metadata_driver"/>
         <argument>App\Entity</argument>
+      </call>
+      <call method="addDriver">
+        <argument type="service" id="doctrine.orm.default_annotation_metadata_driver"/>
+        <argument>CalendarBundle\Entity</argument>
       </call>
     </service>
     <service id="doctrine_cache.providers.doctrine.orm.default_metadata_cache" class="Doctrine\Common\Cache\ArrayCache" public="true">
@@ -3986,6 +4008,14 @@
         <argument>!Debug</argument>
       </call>
       <call method="addPath">
+        <argument>C:\laragon\www\auth\vendor\tattali\calendar-bundle\src/Resources/views</argument>
+        <argument>Calendar</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\laragon\www\auth\vendor\tattali\calendar-bundle\src/Resources/views</argument>
+        <argument>!Calendar</argument>
+      </call>
+      <call method="addPath">
         <argument>C:\laragon\www\auth/templates</argument>
       </call>
       <call method="addPath">
@@ -4465,6 +4495,11 @@
           </argument>
         </argument>
       </call>
+    </service>
+    <service id="CalendarBundle\Serializer\Serializer" class="CalendarBundle\Serializer\Serializer" public="false"/>
+    <service id="CalendarBundle\Controller\CalendarController" class="CalendarBundle\Controller\CalendarController" public="true">
+      <argument type="service" id="debug.event_dispatcher"/>
+      <argument type="service" id="CalendarBundle\Serializer\Serializer"/>
     </service>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\BreakfastController" class="App\Controller\BreakfastController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\BreakfastController" class="App\Controller\BreakfastController" autowire="true" abstract="true"/>
