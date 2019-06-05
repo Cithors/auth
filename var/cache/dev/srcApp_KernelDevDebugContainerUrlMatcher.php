@@ -20,6 +20,7 @@ class srcApp_KernelDevDebugContainerUrlMatcher extends Symfony\Bundle\FrameworkB
             '/_profiler/search_bar' => [[['_route' => '_profiler_search_bar', '_controller' => 'web_profiler.controller.profiler::searchBarAction'], null, null, null, false, false, null]],
             '/_profiler/phpinfo' => [[['_route' => '_profiler_phpinfo', '_controller' => 'web_profiler.controller.profiler::phpinfoAction'], null, null, null, false, false, null]],
             '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
+            '/api' => [[['_route' => 'api', '_controller' => 'App\\Controller\\ApiController::index'], null, null, null, false, false, null]],
             '/breakfast' => [[['_route' => 'app_breakfast', '_controller' => 'App\\Controller\\BreakfastController::show'], null, null, null, false, false, null]],
             '/breakfast/list' => [[['_route' => 'app_breakfast_list', '_controller' => 'App\\Controller\\BreakfastController::listbreakfast'], null, null, null, false, false, null]],
             '/annuler' => [[['_route' => 'app_del_missing', '_controller' => 'App\\Controller\\MissingListController::del'], null, null, null, false, false, null]],
