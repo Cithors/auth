@@ -55,4 +55,19 @@ class BreakfastController extends AbstractController
         $result = $statement->fetchAll();
         return $result;
     }
+
+    /**
+     * @Route("api_form",name="app_api_form")
+     */
+    public function addbreakfast(Request $request): Response
+    {
+        $breakfast = new Breakfast();
+        $breakfast->setDate(new \DateTime($_POST['date'].' '.$_POST['start']));
+        $breakfast->setEnd(new \DateTime($_POST['date'].' '.$_POST['end']));
+        $breakfast->setIdUser($_POST['id']);
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->persist($breakfast);
+        $entityManager->flush();
+        return $this->redirect('http://localhost:3000');
+    }
 }

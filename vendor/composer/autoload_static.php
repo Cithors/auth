@@ -106,6 +106,10 @@ class ComposerStaticInit053aaa79171ae8c47b7088304a5e1f92
             'PhpParser\\' => 10,
             'PackageVersions\\' => 16,
         ),
+        'N' => 
+        array (
+            'Nelmio\\CorsBundle\\' => 18,
+        ),
         'M' => 
         array (
             'Monolog\\' => 8,
@@ -452,6 +456,10 @@ class ComposerStaticInit053aaa79171ae8c47b7088304a5e1f92
         'PackageVersions\\' => 
         array (
             0 => __DIR__ . '/..' . '/ocramius/package-versions/src/PackageVersions',
+        ),
+        'Nelmio\\CorsBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/nelmio/cors-bundle',
         ),
         'Monolog\\' => 
         array (

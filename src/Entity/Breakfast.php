@@ -26,6 +26,11 @@ class Breakfast
      */
     private $date;
 
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $end;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -51,6 +56,18 @@ class Breakfast
     public function setDate(\DateTimeInterface $date): self
     {
         $this->date = $date;
+
+        return $this;
+    }
+
+    public function getEnd(): ?\DateTimeInterface
+    {
+        return $this->end;
+    }
+
+    public function setEnd(\DateTimeInterface $end): self
+    {
+        $this->end = $end;
 
         return $this;
     }
