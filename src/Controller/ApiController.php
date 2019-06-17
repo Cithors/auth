@@ -108,4 +108,22 @@ class ApiController extends AbstractController
         }
         return $tab;
     }
+
+    /**
+     * @Route("/api_count",name="app_api_count")
+     */
+
+    public function countbreakfast(){
+        $count = $this->recapcount();
+        return new JsonResponse($count);
+    }
+
+    public function recapcount(){
+        $em = $this->getDoctrine()->getManager();
+        $RAW_QUERY = "SELECT COUNT(*) AS 'count' FROM breakfast;";
+        $statement = $em->getConnection()->prepare($RAW_QUERY);
+        $statement->execute();
+        $results = $statement->fetchAll();
+        return $results['0'];
+    }
 }

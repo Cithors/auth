@@ -36,6 +36,7 @@ class srcApp_KernelDevDebugContainerUrlGenerator extends Symfony\Component\Routi
         'app_api_calendar' => [[], ['_controller' => 'App\\Controller\\ApiController::calendar'], [], [['text', '/api_calendar']], [], []],
         'app_api_calendar_score' => [[], ['_controller' => 'App\\Controller\\ApiController::score'], [], [['text', '/api_calendar_score']], [], []],
         'app_api_list' => [[], ['_controller' => 'App\\Controller\\ApiController::listbreakfast'], [], [['text', '/api_list']], [], []],
+        'app_api_count' => [[], ['_controller' => 'App\\Controller\\ApiController::countbreakfast'], [], [['text', '/api_count']], [], []],
         'app_breakfast' => [[], ['_controller' => 'App\\Controller\\BreakfastController::show'], [], [['text', '/breakfast']], [], []],
         'app_breakfast_list' => [[], ['_controller' => 'App\\Controller\\BreakfastController::listbreakfast'], [], [['text', '/breakfast/list']], [], []],
         'app_api_form' => [[], ['_controller' => 'App\\Controller\\BreakfastController::addbreakfast'], [], [['text', '/api_form']], [], []],

@@ -24,6 +24,7 @@ class srcApp_KernelDevDebugContainerUrlMatcher extends Symfony\Bundle\FrameworkB
             '/api_calendar' => [[['_route' => 'app_api_calendar', '_controller' => 'App\\Controller\\ApiController::calendar'], null, null, null, false, false, null]],
             '/api_calendar_score' => [[['_route' => 'app_api_calendar_score', '_controller' => 'App\\Controller\\ApiController::score'], null, null, null, false, false, null]],
             '/api_list' => [[['_route' => 'app_api_list', '_controller' => 'App\\Controller\\ApiController::listbreakfast'], null, null, null, false, false, null]],
+            '/api_count' => [[['_route' => 'app_api_count', '_controller' => 'App\\Controller\\ApiController::countbreakfast'], null, null, null, false, false, null]],
             '/breakfast' => [[['_route' => 'app_breakfast', '_controller' => 'App\\Controller\\BreakfastController::show'], null, null, null, false, false, null]],
             '/breakfast/list' => [[['_route' => 'app_breakfast_list', '_controller' => 'App\\Controller\\BreakfastController::listbreakfast'], null, null, null, false, false, null]],
             '/api_form' => [[['_route' => 'app_api_form', '_controller' => 'App\\Controller\\BreakfastController::addbreakfast'], null, null, null, false, false, null]],
