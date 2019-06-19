@@ -128,7 +128,6 @@ class UserController extends AbstractController{
                     $form->get('password')->getData()
                 )
             );
-
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
             $entityManager->flush();
@@ -178,5 +177,26 @@ class UserController extends AbstractController{
         $missingl = $tab->getRepository(MissingList::class)->findAll();
 
         return $this->render('abs/index.html.twig', ['user'=>$user,'missing'=>$missings,'list'=>$missingl]);
+    }
+
+    /**
+     * @Route("/api_login",name="app_api_login")
+     */
+    public function reactlogin(Request $request, UserPasswordEncoderInterface $passwordEncoder): Response
+    {
+        $user = new user();
+        $user->setEmail($_POST['mail']);
+        $user->setPassword($passwordEncoder->encodePassword($user,$_POST['pwd']));
+        $list = $this->getDoctrine()->getManager();
+        $users = $list->getRepository(User::class)->findAll();
+        foreach($users as $tab){
+            if($tab->getEmail()==$user->getEmail()){
+                if($tab->getPassword()==$user->getPassword()){
+                    return $this->redirect('http://localhost:3000');
+                }else{
+                    dd($tab->getPassword(),$user->getPassword());
+                }
+            }
+        }
     }
 }

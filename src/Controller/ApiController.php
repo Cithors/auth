@@ -49,6 +49,7 @@ class ApiController extends AbstractController
         return new JsonResponse($tab);
     }
 
+    
     /**
      * @Route("/api_calendar_score", name="app_api_calendar_score")
      */
@@ -61,25 +62,31 @@ class ApiController extends AbstractController
     protected function count()
     {
         $em = $this->getDoctrine()->getManager();
-        $RAW_QUERY = "SELECT COUNT(*) AS 'count', id_user FROM breakfast GROUP BY id_user;";
+        $RAW_QUERY = "SELECT count(*) as 'count', lastname as 'nom', name as 'prenom' FROM breakfast INNER JOIN user ON user.id = breakfast.id_user WHERE status='done' GROUP BY id_user;";
         $statement = $em->getConnection()->prepare($RAW_QUERY);
         $statement->execute();
         $results = $statement->fetchAll();
-        $em = $this->getDoctrine()->getManager();
-        $users = $em->getRepository(User::class)->findAll();
-        $tab = [];
-        foreach ($results as $key =>$result){
-            foreach ($users as $k => $user){
-                if($user->getId() == $result['id_user']){
-                    $tab[$key]['nom']=$user->getLastname();
-                    $tab[$key]['prenom']=$user->getName();
-                }
-            }
-            $tab[$key]['count']= $results[$key]['count'];
-        }
-        return $tab;
+        return $results;
     }
 
+    /**
+     * @Route("/api_calendar_score2", name="app_api_calendar_score2")
+     */
+
+    public function score2(){
+        $tab=$this->count2();        
+        return new JsonResponse($tab);
+    }
+
+    protected function count2()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $RAW_QUERY = "SELECT count(*) as 'count', lastname as 'nom', name as 'prenom' FROM breakfast INNER JOIN user ON user.id = breakfast.id_user WHERE status='undone' GROUP BY id_user;";
+        $statement = $em->getConnection()->prepare($RAW_QUERY);
+        $statement->execute();
+        $results = $statement->fetchAll();
+        return $results;
+    }
     /**
      * @Route("/api_list",name="app_api_list")
      */
@@ -91,39 +98,10 @@ class ApiController extends AbstractController
 
     public function recap(){
         $em = $this->getDoctrine()->getManager();
-        $RAW_QUERY = "SELECT COUNT(*) AS 'count', id_pastries FROM user GROUP BY id_pastries;";
+        $RAW_QUERY = "SELECT count(*) AS 'count', pastries.name AS 'nom' FROM user INNER JOIN pastries ON user.id_pastries = pastries.id GROUP BY id_pastries;";
         $statement = $em->getConnection()->prepare($RAW_QUERY);
         $statement->execute();
         $results = $statement->fetchAll();
-        $pastries = $this->getDoctrine()->getManager();
-        $pastrieslist = $pastries->getRepository(Pastries::class)->findAll();
-        $tab = [];
-        foreach ($results as $key =>$result){
-            foreach ($pastrieslist as $k => $pastry){
-                if($pastry->getId() == $result['id_pastries']){
-                    $tab[$key]['nom']=$pastry->getName();
-                }
-            }
-            $tab[$key]['count']= $results[$key]['count'];
-        }
-        return $tab;
-    }
-
-    /**
-     * @Route("/api_count",name="app_api_count")
-     */
-
-    public function countbreakfast(){
-        $count = $this->recapcount();
-        return new JsonResponse($count);
-    }
-
-    public function recapcount(){
-        $em = $this->getDoctrine()->getManager();
-        $RAW_QUERY = "SELECT COUNT(*) AS 'count' FROM breakfast;";
-        $statement = $em->getConnection()->prepare($RAW_QUERY);
-        $statement->execute();
-        $results = $statement->fetchAll();
-        return $results['0'];
+        return $results;
     }
 }

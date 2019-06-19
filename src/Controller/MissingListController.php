@@ -12,6 +12,7 @@ use App\Form\AbsFormType;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 class MissingListController extends AbstractController
 {
@@ -104,5 +105,24 @@ class MissingListController extends AbstractController
         return $this->render('abs/askabs.html.twig', [
             'registrationForm' => $form->createView(),
         ]);
+    }
+
+    /**
+     * @Route("/api_abs", name="app_abs")
+     */
+
+    public function absence(){
+        $tab=$this->verif();        
+        return new JsonResponse($tab);
+    }
+
+    protected function verif()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $RAW_QUERY = "SELECT user.name, lastname, start, end, missing.name as 'nature', status FROM missing_list INNER JOIN user ON user.id = missing_list.id_user INNER JOIN missing ON missing.id = missing_list.id_missing;";
+        $statement = $em->getConnection()->prepare($RAW_QUERY);
+        $statement->execute();
+        $results = $statement->fetchAll();
+        return $results;
     }
 }

@@ -5328,17 +5328,19 @@
         <argument key="authenticationUtils" type="service" id="security.authentication_utils"/>
       </argument>
     </service>
-    <service id=".service_locator.V2pTSRP" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.Fb2DIYb" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\MissingListController::askabs" type="service" id=".service_locator.SNtE8gu"/>
         <argument key="App\Controller\UserController::adduser" type="service" id=".service_locator.lm3AYgL"/>
         <argument key="App\Controller\UserController::login" type="service" id=".service_locator.EbLunuf"/>
+        <argument key="App\Controller\UserController::reactlogin" type="service" id=".service_locator.lm3AYgL"/>
         <argument key="App\Controller\UserController::register" type="service" id=".service_locator.lm3AYgL"/>
         <argument key="App\Controller\UserController::up" type="service" id=".service_locator.lm3AYgL"/>
         <argument key="App\Controller\MissingListController:askabs" type="service" id=".service_locator.SNtE8gu"/>
         <argument key="App\Controller\UserController:adduser" type="service" id=".service_locator.lm3AYgL"/>
         <argument key="App\Controller\UserController:login" type="service" id=".service_locator.EbLunuf"/>
+        <argument key="App\Controller\UserController:reactlogin" type="service" id=".service_locator.lm3AYgL"/>
         <argument key="App\Controller\UserController:register" type="service" id=".service_locator.lm3AYgL"/>
         <argument key="App\Controller\UserController:up" type="service" id=".service_locator.lm3AYgL"/>
       </argument>
@@ -5727,7 +5729,7 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.V2pTSRP"/>
+      <argument type="service" id=".service_locator.Fb2DIYb"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
@@ -6091,7 +6093,7 @@
     <service id="jms_serializer.accessor_strategy" alias="jms_serializer.accessor_strategy.default" public="false"/>
     <service id="JMS\Serializer\ContextFactory\SerializationContextFactoryInterface" alias="jms_serializer.configured_serialization_context_factory" public="false"/>
     <service id="JMS\Serializer\ContextFactory\DeserializationContextFactoryInterface" alias="jms_serializer.configured_deserialization_context_factory" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.V2pTSRP"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.Fb2DIYb"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="validator" alias="debug.validator" public="true"/>
